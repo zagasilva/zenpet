@@ -7,6 +7,7 @@
 <title>Zen Pet — Clínica Veterinária, Penafiel</title>
 <meta name="description" content="Centro veterinário e veterinário ao domicílio em Penafiel. Consultas, vacinação, cirurgia, ecografia, raio-X, análises clínicas, banhos e tosquias. A mesma saúde, sem mexer uma pata!">
 <link rel="icon" href="/v2/assets/img/logo.png">
+<link rel="stylesheet" href="/v2/assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
@@ -54,12 +55,13 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 section h2{font-size:34px}
 .section-sub{margin:8px 0 36px;color:var(--soft);font-size:16px}
 .band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pad{padding:72px 0}
+.pad{padding-top:72px;padding-bottom:72px}
 .grid{display:grid;gap:18px}
 .services-grid{grid-template-columns:repeat(4,1fr)}
 .card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px;transition:border-color .2s}
 .card:hover{border-color:var(--teal)}
-.card .mark{width:42px;height:42px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:800;font-size:17px}
+.card .mark{width:44px;height:44px;border-radius:13px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--deep);font-size:21px;line-height:1;transition:background .2s,color .2s}
+.card:hover .mark{background:var(--teal);color:#fff}
 .card h3{font-family:'Albert Sans',sans-serif;font-size:18px;font-weight:700;color:var(--deep);margin:14px 0 8px}
 .card p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
 .dom{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding:72px 24px;max-width:1080px;margin:0 auto}
@@ -121,7 +123,7 @@ header.menu-open nav{display:flex}
 .services-grid,.reviews-grid{grid-template-columns:1fr}
 .insta{padding:28px}
 /* Tighter vertical rhythm so the page is not mostly whitespace */
-.pad{padding:48px 0}
+.pad{padding-top:48px;padding-bottom:48px}
 .hero,.dom,.contact{padding-top:36px;padding-bottom:36px;gap:32px}
 section h2{font-size:26px}
 .hero h1{font-size:31px}
@@ -193,14 +195,14 @@ body{padding-bottom:76px}
     <h2>Serviços</h2>
     <p class="section-sub">Tudo o que o seu companheiro precisa, num só lugar.</p>
     <div class="grid services-grid">
-      <div class="card"><div class="mark">Cs</div><h3>Consulta</h3><p>Medicina preventiva e diagnóstico, com tempo e calma para cada animal.</p></div>
-      <div class="card"><div class="mark">Va</div><h3>Vacinação</h3><p>Planos de vacinação ajustados à idade e estilo de vida.</p></div>
-      <div class="card"><div class="mark">Dp</div><h3>Desparasitação</h3><p>Proteção interna e externa contra parasitas, todo o ano.</p></div>
-      <div class="card"><div class="mark">Ci</div><h3>Cirurgia</h3><p>Cirurgias de tecidos moles e esterilizações com acompanhamento próximo.</p></div>
-      <div class="card"><div class="mark">Ec</div><h3>Ecografia</h3><p>Avaliação por imagem, indolor e sem stress.</p></div>
-      <div class="card"><div class="mark">Rx</div><h3>Raio-X</h3><p>Radiografia digital para diagnósticos rápidos e precisos.</p></div>
-      <div class="card"><div class="mark">An</div><h3>Análises clínicas</h3><p>Análises no próprio dia para decisões sem esperas.</p></div>
-      <div class="card"><div class="mark">Bt</div><h3>Banhos &amp; tosquias</h3><p>Higiene e estética com paciência e carinho, mesmo para os mais tímidos.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-heart-pulse" aria-hidden="true"></i></div><h3>Consulta</h3><p>Medicina preventiva e diagnóstico, com tempo e calma para cada animal.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-shield-plus" aria-hidden="true"></i></div><h3>Vacinação</h3><p>Planos de vacinação ajustados à idade e estilo de vida.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-bug" aria-hidden="true"></i></div><h3>Desparasitação</h3><p>Proteção interna e externa contra parasitas, todo o ano.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-scissors" aria-hidden="true"></i></div><h3>Cirurgia</h3><p>Cirurgias de tecidos moles e esterilizações com acompanhamento próximo.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-soundwave" aria-hidden="true"></i></div><h3>Ecografia</h3><p>Avaliação por imagem, indolor e sem stress.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-lungs" aria-hidden="true"></i></div><h3>Raio-X</h3><p>Radiografia digital para diagnósticos rápidos e precisos.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-droplet" aria-hidden="true"></i></div><h3>Análises clínicas</h3><p>Análises no próprio dia para decisões sem esperas.</p></div>
+      <div class="card"><div class="mark"><i class="bi bi-stars" aria-hidden="true"></i></div><h3>Banhos &amp; tosquias</h3><p>Higiene e estética com paciência e carinho, mesmo para os mais tímidos.</p></div>
     </div>
   </div>
 </section>
