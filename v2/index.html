@@ -85,9 +85,6 @@ section h2{font-size:34px}
 .review p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);flex:1}
 .review footer{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--deep)}
 .review .avatar{width:34px;height:34px;border-radius:999px;background:var(--mint);color:var(--deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
-.review-single{max-width:780px;margin:0 auto;padding:32px 34px;gap:16px}
-.review-single p{font-size:17px;line-height:1.7;color:var(--ink)}
-.review-single footer{font-size:15px}
 .insta{background:linear-gradient(120deg,#e0f2ef,#eef8f5);border:1px solid #cfe9e4;border-radius:24px;padding:40px 44px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
 .insta h2{font-size:28px}
 .insta p{margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--muted)}
@@ -126,8 +123,6 @@ header.menu-open nav{display:flex}
 @media(max-width:560px){
 .services-grid,.reviews-grid{grid-template-columns:1fr}
 .pad-tight{padding-top:48px}
-.review-single{padding:22px 20px}
-.review-single p{font-size:15.5px;line-height:1.65}
 .insta{padding:28px}
 /* Tighter vertical rhythm so the page is not mostly whitespace */
 .pad{padding-top:48px;padding-bottom:48px}
@@ -250,10 +245,22 @@ body{padding-bottom:76px}
       <span class="review-badge"><span class="stars">★★★★★</span> 5,0 no Google</span>
     </div>
     <p class="section-sub" style="margin-bottom:32px">Avaliações de clientes no Google.</p>
-    <div class="review review-single">
-      <span class="stars">★★★★★</span>
-      <p>“Não tenho palavras para descrever o rigor e profissionalismo desta clínica. É o único sítio onde a minha cadela entra extremamente feliz, sempre à procura do Sr. Pedro e da Dra. Estefânia. Já se tornaram família e não confiaria em mais ninguém para tomar conta dos meus filhos de 4 patas. Obrigada por tudo ♥️”</p>
-      <footer><span class="avatar">D</span>Daniela Silva</footer>
+    <div class="grid reviews-grid">
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>“Não tenho palavras para descrever o rigor e profissionalismo desta clínica. É o único sítio onde a minha cadela entra extremamente feliz, sempre à procura do Sr. Pedro e da Dra. Estefânia. Já se tornaram família e não confiaria em mais ninguém para tomar conta dos meus filhos de 4 patas. Obrigada por tudo ♥️”</p>
+        <footer><span class="avatar">D</span>Daniela Silva</footer>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>“Desde o momento em que entramos, sentimos um carinho, uma empatia e um profissionalismo incríveis. 🤍 Tratam os nossos animais como se fossem deles! O atendimento é humanizado, as instalações são impecáveis e explicam tudo com muita clareza. Recomendo a 100% a quem procura o melhor cuidado para o seu animal ✨”</p>
+        <footer><span class="avatar">V</span>Vera Moreira</footer>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p lang="en">“A wonderful and competent vet who uses science, experience and intuition ! Fluent english and comfortable with large dogs and does not overtreat with antibiotics.”</p>
+        <footer><span class="avatar">R</span>Rachel Z.</footer>
+      </div>
     </div>
   </div>
 </section>
