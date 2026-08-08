@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zen Pet — Clínica Veterinária, Penafiel</title>
+<meta name="description" content="Centro veterinário e veterinário ao domicílio em Penafiel. Consultas, vacinação, cirurgia, ecografia, raio-X, análises clínicas, banhos e tosquias. A mesma saúde, sem mexer uma pata!">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#12333a;--teal:#2ba39b;--deep:#14555a;--muted:#3c6067;--soft:#5b7d83;--bg:#f6faf9;--line:#e2edeb;--mint:#e0f2ef}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Albert Sans',sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+a{color:var(--deep)}a:hover{color:var(--teal)}
+h1,h2,h3{font-family:'Source Serif 4',serif;font-weight:600;margin:0}
+img{display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;text-decoration:none;border-radius:999px;font-weight:700;font-size:16px;padding:14px 26px;transition:.2s}
+.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:var(--deep);color:#fff}
+.btn-outline{background:#fff;color:var(--deep);border:1.5px solid #b9ddd7}.btn-outline:hover{border-color:var(--teal);background:#f0f9f7}
+.btn-deep{background:var(--deep);color:#fff}.btn-deep:hover{background:var(--teal);color:#fff}
+header{position:sticky;top:0;z-index:50;background:rgba(246,250,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;padding:14px 24px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:38px}
+.brand span{font-weight:800;font-size:19px;color:var(--deep);letter-spacing:-.02em}
+.nav nav{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:15px;font-weight:500}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav .cta{background:var(--teal);color:#fff;padding:9px 18px;border-radius:999px;font-weight:600}
+.nav .cta:hover{background:var(--deep)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 24px 64px;max-width:1080px;margin:0 auto}
+.badge{align-self:flex-start;display:inline-block;background:var(--mint);color:var(--deep);font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+.hero h1{font-size:52px;line-height:1.1;letter-spacing:-.01em;text-wrap:pretty;margin:20px 0}
+.hero .sub{font-size:18px;line-height:1.6;color:var(--muted);max-width:46ch;margin:0 0 24px}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;font-size:14px;color:var(--soft)}
+.hero-img{position:relative}
+.hero-img .photo{border-radius:28px;overflow:hidden;aspect-ratio:4/4.6}
+.hero-img .photo img{width:100%;height:100%;object-fit:cover}
+.hero-card{position:absolute;bottom:-18px;left:-18px;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 12px 32px rgba(20,85,90,.14);display:flex;align-items:center;gap:12px;font-size:13.5px;line-height:1.35;color:var(--muted)}
+.hero-card img{width:34px;height:34px}
+section h2{font-size:34px}
+.section-sub{margin:8px 0 36px;color:var(--soft);font-size:16px}
+.band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pad{padding:72px 0}
+.grid{display:grid;gap:18px}
+.services-grid{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px;transition:border-color .2s}
+.card:hover{border-color:var(--teal)}
+.card .mark{width:42px;height:42px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:800;font-size:17px}
+.card h3{font-family:'Albert Sans',sans-serif;font-size:18px;font-weight:700;color:var(--deep);margin:14px 0 8px}
+.card p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.dom{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding:72px 24px;max-width:1080px;margin:0 auto}
+.dom .photo{border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#dcefec,#dcefec 14px,#e8f5f2 14px,#e8f5f2 28px);display:flex;align-items:center;justify-content:center}
+.dom .photo span{font-family:monospace;font-size:13px;color:var(--soft);background:#ffffffcc;padding:8px 14px;border-radius:8px}
+.dom p{font-size:16.5px;line-height:1.65;color:var(--muted);margin:16px 0}
+.checks{margin:0 0 20px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15.5px;color:var(--deep);font-weight:500}
+.checks li::before{content:"✓";color:var(--teal);margin-right:10px}
+.team{background:var(--deep);color:#fff}
+.team .section-sub{color:#a8d3cd}
+.team-grid{grid-template-columns:repeat(3,1fr)}
+.member{background:#1a656b;border-radius:18px;padding:20px}
+.member .photo{border-radius:14px;aspect-ratio:1;background:repeating-linear-gradient(45deg,#22757c,#22757c 12px,#276f76 12px,#276f76 24px);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#c9e6e2}
+.member strong{display:block;font-size:16px;margin-top:12px}
+.member em{font-style:normal;font-size:13.5px;color:#a8d3cd}
+.stars{color:#f2b01e;letter-spacing:2px}
+.review-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;color:var(--deep)}
+.reviews-grid{grid-template-columns:repeat(3,1fr)}
+.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.review p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);flex:1}
+.review footer{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--deep)}
+.review .avatar{width:34px;height:34px;border-radius:999px;background:var(--mint);color:var(--deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.insta{background:linear-gradient(120deg,#e0f2ef,#eef8f5);border:1px solid #cfe9e4;border-radius:24px;padding:40px 44px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.insta h2{font-size:28px}
+.insta p{margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--muted)}
+.faq-wrap{max-width:760px;margin:0 auto;padding:24px 24px 72px}
+.faq-wrap details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq-wrap summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;font-weight:600;font-size:16px;color:var(--deep);list-style:none}
+.faq-wrap summary::-webkit-details-marker{display:none}
+.faq-wrap summary::after{content:"+";color:var(--teal);font-size:20px}
+.faq-wrap details[open] summary::after{content:"−"}
+.faq-wrap details p{margin:0;padding:0 22px 18px;font-size:15px;line-height:1.6;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:72px 24px;max-width:1080px;margin:0 auto}
+.contact dl{margin:18px 0;font-size:16px;color:var(--muted)}
+.contact dt{font-weight:700;color:var(--deep);margin-top:14px}
+.contact dd{margin:2px 0 0}
+.contact .map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:320px}
+.contact iframe{border:0;width:100%;height:100%;min-height:320px}
+footer.site{background:var(--ink);color:#a8d3cd}
+footer.site .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 24px;font-size:14px}
+footer.site img{width:28px;height:28px}
+footer.site a{margin-left:auto;color:#8ed0c6;text-decoration:none;font-weight:600}
+@media(max-width:900px){
+.hero,.dom,.contact{grid-template-columns:1fr;padding-top:48px;padding-bottom:48px}
+.hero h1{font-size:36px}
+.services-grid{grid-template-columns:repeat(2,1fr)}
+.team-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
+.nav nav{display:none}
+.hero-card{left:12px}
+}
+@media(max-width:560px){
+.services-grid,.team-grid,.reviews-grid{grid-template-columns:1fr}
+.insta{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#topo"><img src="assets/img/logo.png" alt="Zen Pet"><span>Zen Pet</span></a>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#domicilios">Domicílios</a>
+      <a href="#equipa">Equipa</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contactos">Contactos</a>
+      <a class="cta" href="tel:+351916840339">916 840 339</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="topo">
+  <div>
+    <span class="badge">Clínica veterinária · Penafiel</span>
+    <h1>Cuidamos do seu animal com calma, na clínica ou em sua casa.</h1>
+    <p class="sub">Centro veterinário e veterinário ao domicílio. A mesma saúde, sem mexer uma pata!</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="tel:+351916840339">Ligar agora</a>
+      <a class="btn btn-outline" href="https://wa.me/351916840339" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+    <div class="hero-meta">
+      <span>Rua de Covas 411H, Penafiel</span><span>·</span>
+      <span>Por marcação</span><span>·</span>
+      <a href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer" style="color:var(--teal);font-weight:600;text-decoration:none">@zen__pet</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <div class="photo"><img src="assets/img/hero.jpg" alt="Veterinária com gato ao colo"></div>
+    <div class="hero-card"><img src="assets/img/logo.png" alt=""><div><strong style="color:var(--deep)">Domicílios</strong><br>vamos até si, em toda a região</div></div>
+  </div>
+</section>
+
+<section class="band" id="servicos">
+  <div class="wrap pad">
+    <h2>Serviços</h2>
+    <p class="section-sub">Tudo o que o seu companheiro precisa, num só lugar.</p>
+    <div class="grid services-grid">
+      <div class="card"><div class="mark">Cs</div><h3>Consulta</h3><p>Medicina preventiva e diagnóstico, com tempo e calma para cada animal.</p></div>
+      <div class="card"><div class="mark">Va</div><h3>Vacinação</h3><p>Planos de vacinação ajustados à idade e estilo de vida.</p></div>
+      <div class="card"><div class="mark">Dp</div><h3>Desparasitação</h3><p>Proteção interna e externa contra parasitas, todo o ano.</p></div>
+      <div class="card"><div class="mark">Ci</div><h3>Cirurgia</h3><p>Cirurgias de tecidos moles e esterilizações com acompanhamento próximo.</p></div>
+      <div class="card"><div class="mark">Ec</div><h3>Ecografia</h3><p>Avaliação por imagem, indolor e sem stress.</p></div>
+      <div class="card"><div class="mark">Rx</div><h3>Raio-X</h3><p>Radiografia digital para diagnósticos rápidos e precisos.</p></div>
+      <div class="card"><div class="mark">An</div><h3>Análises clínicas</h3><p>Análises no próprio dia para decisões sem esperas.</p></div>
+      <div class="card"><div class="mark">Bt</div><h3>Banhos &amp; tosquias</h3><p>Higiene e estética com paciência e carinho, mesmo para os mais tímidos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dom" id="domicilios">
+  <div class="photo"><span>foto: visita ao domicílio</span></div>
+  <div>
+    <h2>Veterinário ao domicílio</h2>
+    <p>Para animais ansiosos, tutores sem transporte ou famílias com vários patudos, vamos até si. Consultas, vacinação e acompanhamento no conforto de casa — com a mesma qualidade da clínica.</p>
+    <ul class="checks">
+      <li>Menos stress para o animal</li>
+      <li>Horário combinado consigo</li>
+      <li>Penafiel, Paredes, Lousada e Marco de Canaveses</li>
+    </ul>
+    <a class="btn btn-deep" href="https://wa.me/351916840339?text=Ol%C3%A1!%20Gostava%20de%20marcar%20uma%20visita%20ao%20domic%C3%ADlio." target="_blank" rel="noreferrer">Marcar visita ao domicílio</a>
+  </div>
+</section>
+
+<section class="team" id="equipa">
+  <div class="wrap pad">
+    <h2>A equipa</h2>
+    <p class="section-sub">Caras conhecidas que tratam o seu animal pelo nome.</p>
+    <div class="grid team-grid">
+      <div class="member"><div class="photo">foto</div><strong>Dra. Estefânia Soares</strong><em>Médica veterinária</em></div>
+      <div class="member"><div class="photo">foto</div><strong>Dra. Sofia Almeida</strong><em>Médica veterinária</em></div>
+      <div class="member"><div class="photo">foto</div><strong>Dra. Beatriz Pinto</strong><em>Médica veterinária</em></div>
+      <div class="member"><div class="photo">foto</div><strong>Enf. Armindo Silva</strong><em>Enfermeiro veterinário</em></div>
+      <div class="member"><div class="photo">foto</div><strong>Liliana Ribeiro</strong><em>Auxiliar veterinária</em></div>
+      <div class="member"><div class="photo">foto</div><strong>Pedro Lourenço</strong><em>Auxiliar veterinário</em></div>
+    </div>
+  </div>
+</section>
+
+<section id="testemunhos">
+  <div class="wrap" style="padding:72px 24px 8px">
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px">
+      <h2>O que dizem os tutores</h2>
+      <span class="review-badge"><span class="stars">★★★★★</span> 5,0 no Google</span>
+    </div>
+    <p class="section-sub" style="margin-bottom:32px">Avaliações de clientes no Google.</p>
+    <div class="grid reviews-grid">
+      <div class="review"><span class="stars">★★★★★</span><p>“(exemplo) Equipa fantástica, trataram o nosso cão com muito carinho. Recomendo a todos!”</p><footer><span class="avatar">N</span>Nome do cliente</footer></div>
+      <div class="review"><span class="stars">★★★★★</span><p>“(exemplo) Profissionais atenciosos e disponíveis. A consulta ao domicílio foi uma grande ajuda.”</p><footer><span class="avatar">N</span>Nome do cliente</footer></div>
+      <div class="review"><span class="stars">★★★★★</span><p>“(exemplo) Excelente atendimento, preços justos e muito cuidado com os animais.”</p><footer><span class="avatar">N</span>Nome do cliente</footer></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="padding:64px 24px">
+    <div class="insta">
+      <div style="flex:1;min-width:280px">
+        <h2>Novidades todos os dias</h2>
+        <p>Dicas de saúde, casos do dia a dia e os patudos que passam pela clínica — siga-nos no Instagram.</p>
+      </div>
+      <a class="btn btn-primary" href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer" style="white-space:nowrap">Seguir @zen__pet</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-wrap" id="faq">
+  <h2 style="margin-bottom:28px">Perguntas frequentes</h2>
+  <details open><summary>Preciso de marcação para uma consulta?</summary><p>Sim, recomendamos marcação por telefone ou WhatsApp para reduzir o tempo de espera. Em situações urgentes, ligue-nos e faremos o possível para o atender de imediato.</p></details>
+  <details><summary>Como funcionam as visitas ao domicílio?</summary><p>Combina connosco o dia e a hora, e a equipa desloca-se a sua casa com o equipamento necessário para consultas, vacinação e acompanhamento.</p></details>
+  <details><summary>Que áreas cobrem nos domicílios?</summary><p>Penafiel, Paredes, Lousada e Marco de Canaveses. Contacte-nos para confirmar a sua zona.</p></details>
+  <details><summary>Atendem animais exóticos?</summary><p>Contacte-nos previamente para confirmarmos se podemos ajudar o seu animal ou encaminhá-lo para o colega certo.</p></details>
+  <details><summary>Quais os meios de pagamento?</summary><p>Aceitamos numerário, multibanco e MB Way.</p></details>
+</section>
+
+<section class="band" id="contactos">
+  <div class="contact">
+    <div>
+      <h2>Contactos &amp; horário</h2>
+      <dl>
+        <dt>Morada</dt><dd>Rua de Covas 411H, 4560-656 Penafiel</dd>
+        <dt>Telemóvel</dt><dd><a href="tel:+351916840339" style="text-decoration:none">916 840 339</a></dd>
+        <dt>Fixo</dt><dd><a href="tel:+351255212739" style="text-decoration:none">255 212 739</a></dd>
+        <dt>Horário</dt><dd>Por marcação</dd>
+        <dt>Domicílios</dt><dd>Penafiel · Paredes · Lousada · Marco de Canaveses</dd>
+      </dl>
+      <div style="display:flex;gap:12px">
+        <a class="btn btn-primary" href="tel:+351916840339" style="font-size:15.5px;padding:13px 24px">Ligar</a>
+        <a class="btn btn-outline" href="https://wa.me/351916840339" target="_blank" rel="noreferrer" style="font-size:15.5px;padding:13px 24px">WhatsApp</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.393413657437!2d-8.286775623463564!3d41.21319640678116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd249100605084af%3A0x6ea720e1016a17dd!2sZenPet%20Veterin%C3%A1ria!5e0!3m2!1sen!2spt!4v1724605697082!5m2!1sen!2spt" loading="lazy" title="Mapa Zen Pet" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <img src="assets/img/logo.png" alt="">
+    <span>© 2026 Zen Pet — Clínica Veterinária, Penafiel</span>
+    <a href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
