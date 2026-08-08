@@ -68,6 +68,7 @@ section h2{font-size:34px}
 .dom{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding:72px 24px;max-width:1080px;margin:0 auto}
 .dom .photo{border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#dcefec,#dcefec 14px,#e8f5f2 14px,#e8f5f2 28px);display:flex;align-items:center;justify-content:center}
 .dom .photo span{font-family:monospace;font-size:13px;color:var(--soft);background:#ffffffcc;padding:8px 14px;border-radius:8px}
+.dom .photo img{width:100%;height:100%;object-fit:cover}
 .dom p{font-size:16.5px;line-height:1.65;color:var(--muted);margin:16px 0}
 .checks{margin:0 0 20px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15.5px;color:var(--deep);font-weight:500}
 .checks li::before{content:"✓";color:var(--teal);margin-right:10px}
@@ -75,7 +76,8 @@ section h2{font-size:34px}
 .team .section-sub{color:#a8d3cd}
 .team-grid{grid-template-columns:repeat(3,1fr)}
 .member{background:#1a656b;border-radius:18px;padding:20px}
-.member .photo{border-radius:14px;aspect-ratio:1;background:repeating-linear-gradient(45deg,#22757c,#22757c 12px,#276f76 12px,#276f76 24px);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#c9e6e2}
+.member .photo{border-radius:14px;overflow:hidden;aspect-ratio:1;background:repeating-linear-gradient(45deg,#22757c,#22757c 12px,#276f76 12px,#276f76 24px);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#c9e6e2}
+.member .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .member strong{display:block;font-size:16px;margin-top:12px}
 .member em{font-style:normal;font-size:13.5px;color:#a8d3cd}
 .stars{color:#f2b01e;letter-spacing:2px}
@@ -210,7 +212,7 @@ body{padding-bottom:76px}
 </section>
 
 <section class="dom" id="domicilios">
-  <div class="photo"><span>foto: visita ao domicílio</span></div>
+  <div class="photo"><img src="/v2/assets/img/domicilio.jpg" alt="Veterinária a confortar um cão durante uma visita ao domicílio" loading="lazy"></div>
   <div>
     <h2>Veterinário ao domicílio</h2>
     <p>Para animais ansiosos, tutores sem transporte ou famílias com vários patudos, vamos até si. Consultas, vacinação e acompanhamento no conforto de casa — com a mesma qualidade da clínica.</p>
@@ -233,7 +235,7 @@ body{padding-bottom:76px}
       <div class="member"><div class="photo">foto</div><strong>Dra. Beatriz Pinto</strong><em>Médica veterinária</em></div>
       <div class="member"><div class="photo">foto</div><strong>Enf. Armindo Silva</strong><em>Enfermeiro veterinário</em></div>
       <div class="member"><div class="photo">foto</div><strong>Liliana Ribeiro</strong><em>Auxiliar veterinária</em></div>
-      <div class="member"><div class="photo">foto</div><strong>Pedro Lourenço</strong><em>Auxiliar veterinário</em></div>
+      <div class="member"><div class="photo"><img src="/v2/assets/img/team/pedro-lourenco.jpg" alt="Pedro Lourenço" loading="lazy"></div><strong>Pedro Lourenço</strong><em>Auxiliar veterinário</em></div>
     </div>
   </div>
 </section>
