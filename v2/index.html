@@ -81,6 +81,14 @@ section h2{font-size:34px}
 .member .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .member strong{display:block;font-size:16px;margin-top:12px}
 .member em{font-style:normal;font-size:13.5px;color:#a8d3cd}
+.pets-grid{grid-template-columns:1fr 1fr;gap:22px}
+.pet{background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .2s}
+.pet:hover{border-color:var(--teal)}
+.pet .photo{aspect-ratio:4/3;background:var(--mint)}
+.pet .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.pet-body{padding:18px 22px 22px}
+.pet h3{font-size:23px;color:var(--deep);margin:0 0 6px}
+.pet p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
 .stars{color:#f2b01e;letter-spacing:2px}
 .review-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;color:var(--deep)}
 .reviews-grid{grid-template-columns:repeat(3,1fr)}
@@ -124,7 +132,7 @@ header.menu-open nav{display:flex}
 .nav .cta{margin-left:auto}
 }
 @media(max-width:560px){
-.services-grid,.reviews-grid{grid-template-columns:1fr}
+.services-grid,.reviews-grid,.pets-grid{grid-template-columns:1fr}
 .pad-tight{padding-top:48px}
 .insta{padding:28px}
 /* Tighter vertical rhythm so the page is not mostly whitespace */
@@ -237,6 +245,29 @@ body{padding-bottom:76px}
       <div class="member"><div class="photo"><img src="/v2/assets/img/team/armindo-silva.jpg" alt="Enf. Armindo Silva" loading="lazy"></div><strong>Enf. Armindo Silva</strong><em>Enfermeiro veterinário</em></div>
       <div class="member"><div class="photo"><img src="/v2/assets/img/team/liliana-ribeiro.jpg" alt="Liliana Ribeiro" loading="lazy"></div><strong>Liliana Ribeiro</strong><em>Auxiliar veterinária</em></div>
       <div class="member"><div class="photo"><img src="/v2/assets/img/team/pedro-lourenco.jpg" alt="Pedro Lourenço" loading="lazy"></div><strong>Pedro Lourenço</strong><em>Auxiliar veterinário</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="mascotes">
+  <div class="wrap pad">
+    <h2>As mascotes</h2>
+    <p class="section-sub">Os residentes da clínica, sempre por perto para receber quem chega.</p>
+    <div class="grid pets-grid">
+      <div class="pet">
+        <div class="photo"><img src="/v2/assets/img/pets/yang.jpg" alt="Yang, gato residente da Zen Pet, deitado numa cadeira" loading="lazy"></div>
+        <div class="pet-body">
+          <h3>Yang</h3>
+          <p>Mestre da fuga e do roubo de comida. Adora mimos na barriga e saltar para o colo.</p>
+        </div>
+      </div>
+      <div class="pet">
+        <div class="photo"><img src="/v2/assets/img/pets/fu.jpg" alt="Fú, gato residente da Zen Pet" loading="lazy"></div>
+        <div class="pet-body">
+          <h3>Fú</h3>
+          <p>O anfitrião da casa. É ele que dá as boas-vindas a quem entra pela porta da clínica.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
