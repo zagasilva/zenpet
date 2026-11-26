@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f6faf9">
+<meta name="theme-color" content="#f1e8dd">
 <title>Zen Pet — Clínica Veterinária em Penafiel e ao Domicílio</title>
 <meta name="description" content="Clínica veterinária em Penafiel e veterinário ao domicílio. Consultas, vacinação, cirurgia, ecografia, raio-X, análises e banhos. Marcações: 916 840 339.">
 <link rel="canonical" href="https://www.zenpet.pt/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="icon" href="/assets/img/logo.png">
+<link rel="icon" href="assets/img/logo.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Zen Pet">
@@ -23,163 +23,306 @@
 <meta name="twitter:title" content="Zen Pet — Clínica Veterinária em Penafiel e ao Domicílio">
 <meta name="twitter:description" content="Clínica veterinária em Penafiel e veterinário ao domicílio. Consultas, vacinação, cirurgia, ecografia, raio-X, análises e banhos.">
 <meta name="twitter:image" content="https://www.zenpet.pt/assets/img/og-zenpet.jpg">
-<link rel="stylesheet" href="/assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#12333a;--teal:#2ba39b;--deep:#14555a;--muted:#3c6067;--soft:#5b7d83;--bg:#f6faf9;--line:#e2edeb;--mint:#e0f2ef}
+/* Ensō & reboco — warm limewash walls, the petrol of the logo, the saffron of the reception's cat bust */
+:root{
+  --plaster:#f1e8dd;--plaster-2:#e7dac9;--paper:#fbf7f1;
+  --petrol:#17434f;--petrol-2:#1f5663;--teal:#278189;--mist:#a9cfc8;
+  --saffron:#e8b23a;--saffron-2:#f3cd6e;--clay:#b5603a;
+  --ink:#1d2b2d;--muted:#4c5a5a;--line:rgba(23,67,79,.16);
+  --display:'Caprasimo',Georgia,serif;--body:'Atkinson Hyperlegible',Verdana,sans-serif;
+  --r-lg:28px;--ease:cubic-bezier(.2,.7,.2,1);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .3 0 0 0 0 .18 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
-section[id]{scroll-margin-top:76px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-a{color:var(--deep)}a:hover{color:var(--teal)}
-h1,h2,h3{font-family:'Baloo 2',cursive;font-weight:700;margin:0}
-img{display:block}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.btn{display:inline-block;text-decoration:none;border-radius:999px;font-weight:700;font-size:16px;padding:14px 26px;transition:.2s}
-.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:var(--deep);color:#fff}
-.btn-outline{background:#fff;color:var(--deep);border:1.5px solid #b9ddd7}.btn-outline:hover{border-color:var(--teal);background:#f0f9f7}
-.btn-deep{background:var(--deep);color:#fff}.btn-deep:hover{background:var(--teal);color:#fff}
-header{position:sticky;top:0;z-index:50;background:rgba(246,250,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:24px;padding:14px 24px;max-width:1080px;margin:0 auto}
+body{margin:0;font-family:var(--body);font-size:17px;color:var(--ink);line-height:1.55;
+  background:var(--grain),radial-gradient(1100px 620px at 8% -6%,#fbf1df 0%,transparent 60%),radial-gradient(900px 700px at 100% 30%,#eadfce 0%,transparent 65%),var(--plaster)}
+section[id]{scroll-margin-top:84px}
+a{color:var(--petrol)}a:hover{color:var(--teal)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.005em;color:var(--petrol)}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.pad{padding-top:104px;padding-bottom:104px}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:6px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:999px;font-weight:700;font-size:16.5px;padding:15px 26px;transition:transform .25s var(--ease),background .2s,box-shadow .25s,color .2s;white-space:nowrap}
+.btn i{font-size:18px;line-height:1}
+.btn-sun{background:var(--saffron);color:var(--petrol);box-shadow:0 2px 0 #c58f1c,0 14px 28px -14px rgba(197,143,28,.9)}
+.btn-sun:hover{color:var(--petrol);background:var(--saffron-2);transform:translateY(-2px)}
+.btn-line{color:var(--petrol);border:1.5px solid var(--petrol);background:transparent}
+.btn-line:hover{background:var(--petrol);color:var(--paper)}
+.btn-ghost{color:var(--paper);border:1.5px solid rgba(251,247,241,.5)}
+.btn-ghost:hover{background:var(--paper);color:var(--petrol)}
+
+/* Kicker */
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.kicker::before{content:"";width:14px;height:14px;border-radius:50%;border:2.5px solid currentColor;border-right-color:transparent;transform:rotate(-30deg)}
+.h2{font-size:clamp(34px,4.4vw,54px);line-height:1.04;margin:14px 0 0}
+.lede{font-size:18px;color:var(--muted);margin:18px 0 0;max-width:44ch}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(241,232,221,.86);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;padding:12px 28px;max-width:1180px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{width:38px;height:38px}
-.brand span{font-weight:800;font-size:19px;color:var(--deep);letter-spacing:-.02em}
-.nav nav{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:15px;font-weight:500}
-.nav nav a{text-decoration:none;color:var(--muted)}
-.nav .cta{background:var(--teal);color:#fff;padding:9px 18px;border-radius:999px;font-weight:600;text-decoration:none;white-space:nowrap}
-.nav .cta:hover{background:var(--deep);color:#fff}
-.menu-btn{display:none;width:44px;height:44px;flex:0 0 44px;align-items:center;justify-content:center;background:transparent;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;padding:0}
-.menu-btn span{display:block;position:relative;width:18px;height:2px;border-radius:2px;background:var(--deep)}
-.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:2px;border-radius:2px;background:var(--deep);transition:.2s}
+.brand img{width:40px;height:40px}
+.brand span{font-family:var(--display);font-size:23px;color:var(--petrol);white-space:nowrap}
+.nav nav{margin-left:auto;display:flex;gap:26px;align-items:center;font-size:15.5px;font-weight:700}
+.nav nav a{text-decoration:none;color:var(--petrol);position:relative;padding:4px 0}
+.nav nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--saffron);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav nav a:hover::after{transform:scaleX(1)}
+.nav .cta{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:var(--paper);padding:10px 18px;border-radius:999px;font-weight:700;text-decoration:none;white-space:nowrap;font-size:15.5px;transition:background .2s}
+.nav .cta:hover{background:var(--teal);color:#fff}
+.menu-btn{display:none;width:44px;height:44px;flex:0 0 44px;align-items:center;justify-content:center;background:transparent;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;padding:0}
+.menu-btn span{display:block;position:relative;width:18px;height:2px;border-radius:2px;background:var(--petrol)}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:2px;border-radius:2px;background:var(--petrol);transition:.2s}
 .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
 header.menu-open .menu-btn span{background:transparent}
 header.menu-open .menu-btn span::before{top:0;transform:rotate(45deg)}
 header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .mobile-bar{display:none}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 24px 64px;max-width:1080px;margin:0 auto}
-.badge{align-self:flex-start;display:inline-block;background:var(--mint);color:var(--deep);font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
-.hero h1{font-size:46px;line-height:1.12;letter-spacing:-.01em;text-wrap:pretty;margin:20px 0}
-.hero .sub{font-size:18px;line-height:1.6;color:var(--muted);max-width:46ch;margin:0 0 24px}
-.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;font-size:14px;color:var(--soft)}
-.hero-img{position:relative}
-.hero-img .photo{border-radius:28px;overflow:hidden;aspect-ratio:4/4.6}
-.hero-img .photo img{width:100%;height:100%;object-fit:cover}
-.hero-card{position:absolute;bottom:-18px;left:-18px;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 12px 32px rgba(20,85,90,.14);display:flex;align-items:center;gap:12px;font-size:13.5px;line-height:1.35;color:var(--muted)}
-.hero-card img{width:34px;height:34px}
-section h2{font-size:34px}
-.section-sub{margin:8px 0 36px;color:var(--soft);font-size:16px}
-.band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pad{padding-top:72px;padding-bottom:72px}
-.pad-tight{padding-top:72px;padding-bottom:8px}
-.grid{display:grid;gap:18px}
-.services-grid{grid-template-columns:repeat(4,1fr)}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px;transition:border-color .2s}
-.card:hover{border-color:var(--teal)}
-.card .mark{width:44px;height:44px;border-radius:13px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--deep);font-size:21px;line-height:1;transition:background .2s,color .2s}
-.card:hover .mark{background:var(--teal);color:#fff}
-.card h3{font-family:'Nunito Sans',sans-serif;font-size:18px;font-weight:700;color:var(--deep);margin:14px 0 8px}
-.card p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
-.dom{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;padding:72px 24px;max-width:1080px;margin:0 auto}
-.dom .photo{border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#dcefec,#dcefec 14px,#e8f5f2 14px,#e8f5f2 28px);display:flex;align-items:center;justify-content:center}
-.dom .photo span{font-family:monospace;font-size:13px;color:var(--soft);background:#ffffffcc;padding:8px 14px;border-radius:8px}
-.dom .photo img{width:100%;height:100%;object-fit:cover}
-.dom p{font-size:16.5px;line-height:1.65;color:var(--muted);margin:16px 0}
-.checks{margin:0 0 20px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15.5px;color:var(--deep);font-weight:500}
-.checks li::before{content:"✓";color:var(--teal);margin-right:10px}
-.team{background:var(--deep);color:#fff}
-.team .section-sub{color:#a8d3cd}
-.team-grid{grid-template-columns:repeat(3,1fr)}
-.member{background:#1a656b;border-radius:18px;padding:20px}
-.member .photo{border-radius:14px;overflow:hidden;aspect-ratio:1;background:repeating-linear-gradient(45deg,#22757c,#22757c 12px,#276f76 12px,#276f76 24px);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#c9e6e2}
-.member .photo img{width:100%;height:100%;object-fit:cover;display:block}
-.member strong{display:block;font-size:16px;margin-top:12px}
-.member em{font-style:normal;font-size:13.5px;color:#a8d3cd}
-.pets-grid{grid-template-columns:1fr 1fr;gap:22px}
-.pet{background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .2s}
-.pet:hover{border-color:var(--teal)}
-.pet .photo{aspect-ratio:4/3;background:var(--mint)}
-.pet .photo img{width:100%;height:100%;object-fit:cover;display:block}
-.pet-body{padding:18px 22px 22px}
-.pet h3{font-size:23px;color:var(--deep);margin:0 0 6px}
-.pet p{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
-.stars{color:#f2b01e;letter-spacing:2px}
-.review-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;color:var(--deep)}
-.reviews-grid{grid-template-columns:repeat(3,1fr)}
-.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
-.review p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);flex:1}
-.review footer{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--deep)}
-.review .avatar{width:34px;height:34px;border-radius:999px;background:var(--mint);color:var(--deep);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
-.insta{background:linear-gradient(120deg,#e0f2ef,#eef8f5);border:1px solid #cfe9e4;border-radius:24px;padding:40px 44px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
-.insta h2{font-size:28px}
-.insta p{margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--muted)}
-.faq-wrap{max-width:760px;margin:0 auto;padding:24px 24px 72px}
-.faq-wrap details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden}
-.faq-wrap summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;font-weight:600;font-size:16px;color:var(--deep);list-style:none}
-.faq-wrap summary::-webkit-details-marker{display:none}
-.faq-wrap summary::after{content:"+";color:var(--teal);font-size:20px}
-.faq-wrap details[open] summary::after{content:"−"}
-.faq-wrap details p{margin:0;padding:0 22px 18px;font-size:15px;line-height:1.6;color:var(--muted)}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:72px 24px;max-width:1080px;margin:0 auto}
-.contact dl{margin:18px 0;font-size:16px;color:var(--muted)}
-.contact dt{font-weight:700;color:var(--deep);margin-top:14px}
-.contact dd{margin:2px 0 0}
-.contact .map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:320px}
-.contact iframe{border:0;width:100%;height:100%;min-height:320px}
-footer.site{background:var(--ink);color:#a8d3cd}
-footer.site .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 24px;font-size:14px}
-footer.site img{width:28px;height:28px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:80px 28px 112px;max-width:1180px;margin:0 auto}
+.hero h1{font-size:clamp(40px,5vw,66px);line-height:1.02;margin:22px 0 0;text-wrap:balance}
+.hero h1 .soft{display:block;color:var(--teal);margin-top:.18em;font-size:.62em;line-height:1.12}
+.hero h1 .mark{background:linear-gradient(transparent 62%,rgba(232,178,58,.55) 62%,rgba(232,178,58,.55) 90%,transparent 90%);padding:0 .06em}
+.hero .sub{font-size:19px;color:var(--muted);max-width:40ch;margin:26px 0 32px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:30px;font-size:15px;color:var(--muted)}
+.hero-meta span,.hero-meta a{display:inline-flex;align-items:center;gap:7px}
+.hero-meta i{color:var(--teal)}
+.hero-meta a{text-decoration:none;font-weight:700}
+.status{font-weight:700;color:var(--petrol)}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:#9aa6a5;box-shadow:0 0 0 4px rgba(154,166,165,.22)}
+.status.open::before{background:#3a9d6b;box-shadow:0 0 0 4px rgba(58,157,107,.22);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(58,157,107,.05)}}
+
+.hero-art{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center}
+.hero-art .disc{position:absolute;inset:7%;border-radius:50%;overflow:hidden;background:var(--petrol);box-shadow:0 40px 80px -40px rgba(23,67,79,.55)}
+.hero-art .disc img{width:100%;height:100%;object-fit:cover;object-position:38% 72%;transform:scale(1.04)}
+.enso{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.enso path{fill:none;stroke:var(--petrol);stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.9s .35s var(--ease) forwards}
+.enso path+path{stroke:var(--teal);opacity:.55;animation-delay:.55s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.seal{position:absolute;left:-2%;bottom:4%;width:30%;aspect-ratio:1;border-radius:50%;background:var(--saffron);display:grid;place-items:center;box-shadow:0 18px 34px -18px rgba(150,100,10,.8);opacity:0;animation:pop .7s 1.5s var(--ease) forwards}
+.seal svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 28s linear infinite}
+.seal text{font-family:var(--body);font-weight:700;font-size:11.2px;letter-spacing:.22em;text-transform:uppercase;fill:var(--petrol)}
+.seal img{width:38%;height:38%}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotate(-40deg)}to{opacity:1;transform:none}}
+.tag{position:absolute;right:-4%;top:9%;max-width:230px;background:var(--paper);border-radius:18px 18px 18px 4px;padding:14px 16px;font-size:14px;line-height:1.4;color:var(--muted);box-shadow:0 20px 40px -24px rgba(23,67,79,.5);opacity:0;animation:rise .8s 1.2s var(--ease) forwards}
+.tag strong{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:400;font-size:17px;color:var(--petrol);margin-bottom:3px}
+.tag strong i{color:var(--clay);font-size:16px}
+
+/* Staggered entrance */
+.in{opacity:0;animation:rise .9s var(--ease) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* Services — a menu, not a card grid */
+.services{background:var(--paper);border-radius:48px 48px 0 0;position:relative}
+.svc-layout{display:grid;grid-template-columns:.8fr 1.6fr;gap:64px;align-items:start}
+.svc-intro{position:sticky;top:120px}
+.svc-intro .note{margin-top:28px;display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:var(--plaster);font-size:15px;color:var(--muted)}
+.svc-intro .note i{color:var(--clay);font-size:20px;line-height:1.2}
+.menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:44px;counter-reset:svc}
+.menu li{counter-increment:svc;display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:baseline;padding:24px 4px 26px;border-top:1px solid var(--line);transition:background .3s}
+.menu li::before{content:counter(svc,decimal-leading-zero);font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.06em}
+.menu h3{font-size:25px;line-height:1.15}
+.menu p{grid-column:2/4;margin:0;font-size:15.5px;color:var(--muted);max-width:34ch}
+.menu i{grid-row:1;grid-column:3;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:19px;color:var(--petrol);background:var(--plaster);transition:background .3s,color .3s,transform .4s var(--ease)}
+.menu li:hover i{background:var(--saffron);transform:rotate(-12deg) scale(1.08)}
+
+/* Domicílio — petrol, arched photo, the route */
+.dom{background:var(--grain),radial-gradient(800px 500px at 90% 10%,#23606d,transparent 60%),var(--petrol);color:#d9e8e5}
+.dom-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
+.arch{border-radius:999px 999px 26px 26px;overflow:hidden;aspect-ratio:4/5;border:10px solid rgba(251,247,241,.08);box-shadow:0 40px 70px -40px rgba(0,0,0,.6)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:45% 50%}
+.dom .kicker{color:var(--saffron)}
+.dom h2{color:var(--paper)}
+.dom .big{font-family:var(--display);font-size:clamp(22px,2.3vw,28px);line-height:1.25;color:var(--saffron-2);margin:22px 0 0}
+.dom p{font-size:17.5px;line-height:1.65;margin:18px 0 0;color:#cfe1dd;max-width:52ch}
+.perks{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px;padding:0;list-style:none}
+.perks li{border:1px solid rgba(169,207,200,.35);border-radius:999px;padding:8px 16px;font-size:15px;font-weight:700;color:var(--paper)}
+.route{margin:72px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.route::before{content:"";position:absolute;left:10%;right:10%;top:13px;border-top:2px dashed rgba(232,178,58,.55)}
+.route li{position:relative;text-align:center;padding-top:42px;font-family:var(--display);font-size:20px;color:var(--paper)}
+.route li::before{content:"";position:absolute;top:4px;left:50%;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:var(--petrol);border:3px solid var(--saffron)}
+.route li:first-child::before{background:var(--saffron);box-shadow:0 0 0 6px rgba(232,178,58,.22)}
+.route small{display:block;font-family:var(--body);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-top:4px}
+
+/* Team */
+.team-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:52px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 32px}
+.member .photo{border-radius:999px 999px 22px 22px;overflow:hidden;aspect-ratio:5/6;background:var(--plaster-2)}
+.member .photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.member:hover .photo img{transform:scale(1.05)}
+.member strong{display:block;font-family:var(--display);font-weight:400;font-size:23px;color:var(--petrol);margin-top:16px;line-height:1.2}
+.member em{font-style:normal;font-size:15px;color:var(--muted)}
+.swipe{display:none}
+
+/* Residents */
+.residents{background:var(--plaster-2);background-image:var(--grain);border-radius:48px;margin:0 16px}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:64px 40px;align-items:start}
+.res-grid>div:first-child{grid-column:1/-1;max-width:560px}
+.pet .photo.soon{display:grid;place-items:center;text-align:center;background:var(--grain),radial-gradient(circle at 50% 42%,#2a6b78,var(--petrol) 70%);color:var(--paper)}
+.photo.soon span{display:grid;justify-items:center;gap:12px;font-family:var(--display);font-size:22px}
+.pet .photo.soon img{width:72px;height:72px;padding:14px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 6px var(--petrol),0 0 0 8px rgba(232,178,58,.75)}
+.pet .new-badge{display:inline-block;margin:16px 6px 0;padding:3px 10px;border-radius:999px;background:var(--saffron);color:var(--petrol);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.pet .new-badge+h3{margin-top:6px}
+.pet{background:var(--paper);padding:14px 14px 22px;border-radius:8px;box-shadow:0 24px 40px -26px rgba(23,67,79,.55);position:relative;transform:rotate(-2.5deg);transition:transform .5s var(--ease)}
+.pet+.pet{transform:rotate(2deg) translateY(28px)}
+.pet:hover{transform:rotate(0) translateY(-6px)}
+.pet::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:rgba(232,178,58,.72);transform:rotate(-3deg);border-radius:3px}
+.pet .photo{aspect-ratio:1;overflow:hidden;border-radius:4px}
+.pet .photo img{width:100%;height:100%;object-fit:cover}
+.pet h3{font-size:30px;margin:16px 6px 4px}
+.pet p{margin:0 6px;font-size:15.5px;color:var(--muted)}
+/* Yang — remembered quietly: black and white, no tape, no tilt, no playful hover */
+.res-grid .pet.memorial,.res-grid .pet.memorial:hover{transform:none;box-shadow:0 18px 34px -26px rgba(29,43,45,.45)}
+.pet.memorial::before{display:none}
+.pet.memorial .photo img{filter:grayscale(1) contrast(.95) brightness(1.02)}
+.pet.memorial .in-memoriam{display:block;margin:16px 6px 0;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.pet.memorial h3{margin-top:4px;color:var(--ink)}
+
+/* Reviews */
+.reviews-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:44px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.score{background:var(--petrol);color:var(--paper);border-radius:999px;padding:14px 30px 14px 16px;display:flex;align-items:center;gap:16px;transform:rotate(-2deg)}
+.score b{font-family:var(--display);font-weight:400;font-size:44px;line-height:1;color:var(--petrol);background:var(--saffron);width:84px;height:84px;border-radius:50%;display:grid;place-items:center}
+.score span{font-size:15px;color:#cfe1dd}
+.stars{color:var(--saffron);letter-spacing:3px;font-size:18px}
+.review{background:var(--paper);border-radius:var(--r-lg);padding:30px 26px 26px;display:flex;flex-direction:column;gap:16px;position:relative}
+.review::before{content:"\201C";font-family:var(--display);font-size:82px;line-height:.6;color:var(--saffron);height:34px}
+.review p{margin:0;font-size:15.5px;line-height:1.62;color:var(--ink);flex:1}
+.review footer{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--petrol);padding-top:16px;border-top:1px solid var(--line)}
+.review .avatar{width:36px;height:36px;border-radius:50%;background:var(--mist);color:var(--petrol);font-family:var(--display);font-size:16px;display:grid;place-items:center}
+
+/* Instagram band */
+.insta{background:var(--saffron);background-image:var(--grain);border-radius:var(--r-lg);padding:44px 48px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
+.insta::after{content:"";position:absolute;right:-60px;bottom:-90px;width:260px;height:260px;border-radius:50%;border:26px solid rgba(23,67,79,.1);border-top-color:transparent;transform:rotate(30deg)}
+.insta h2{font-size:clamp(28px,3vw,38px)}
+.insta p{margin:8px 0 0;font-size:17px;color:#3d3a2a;max-width:52ch}
+.insta .btn{position:relative;z-index:1;background:var(--petrol);color:var(--paper)}
+.insta .btn:hover{background:var(--ink);color:#fff}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.4fr;gap:64px;align-items:start}
+.faq-list details{border-top:1px solid var(--line)}
+.faq-list details:last-child{border-bottom:1px solid var(--line)}
+.faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 2px;cursor:pointer;font-family:var(--display);font-size:22px;line-height:1.25;color:var(--petrol);list-style:none}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--body);font-size:22px;background:var(--paper);color:var(--petrol);transition:transform .35s var(--ease),background .2s}
+.faq-list details[open] summary::after{transform:rotate(45deg);background:var(--saffron)}
+.faq-list details p{margin:-6px 0 0;padding:0 56px 26px 2px;font-size:16.5px;line-height:1.65;color:var(--muted)}
+
+/* Contacts */
+.contact{background:var(--paper);border-radius:48px 48px 0 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
+.contact dl{margin:30px 0 0;display:grid;grid-template-columns:auto 1fr;gap:14px 24px;font-size:16.5px}
+.contact dt{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);padding-top:3px}
+.contact dd{margin:0;color:var(--ink)}
+.contact dd a{text-decoration:none;font-weight:700}
+.hours{margin:32px 0;padding:22px 22px 16px;border-radius:22px;background:var(--plaster);font-size:14px}
+.hours h3{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 14px;display:flex;justify-content:space-between;gap:12px}
+.hours h3 .status{letter-spacing:0;text-transform:none;font-size:14px;display:inline-flex;align-items:center;gap:7px}
+.day{display:grid;grid-template-columns:46px 1fr;align-items:center;gap:12px;padding:5px 0;color:var(--muted);font-weight:700;border-radius:8px}
+.day.today{color:var(--petrol)}
+.day.today .bar{background:rgba(23,67,79,.1)}
+.bar{position:relative;height:14px;border-radius:999px;background:rgba(23,67,79,.06)}
+.bar i{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--teal);left:calc((var(--s) - 9) / 11 * 100%);width:calc((var(--e) - var(--s)) / 11 * 100%)}
+.day.today .bar i{background:var(--petrol)}
+.scale{display:grid;grid-template-columns:46px 1fr;gap:12px;margin-top:6px;font-size:12px;color:var(--muted)}
+.scale div{display:flex;justify-content:space-between}
+.hours .fine{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+.map{position:relative;border-radius:999px 999px 28px 28px;overflow:hidden;min-height:560px;border:10px solid var(--plaster);background:var(--plaster-2)}
+.map iframe{position:absolute;inset:0;border:0;width:100%;height:100%;display:block;filter:saturate(.75) sepia(.12)}
+
+/* Footer */
+footer.site{background:var(--grain),var(--petrol);color:var(--mist);overflow:hidden}
+footer.site .wordmark{font-family:var(--display);font-size:clamp(72px,17vw,230px);line-height:.8;color:rgba(169,207,200,.12);letter-spacing:-.02em;white-space:nowrap;padding:56px 28px 0;max-width:1180px;margin:0 auto;user-select:none}
+footer.site .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:32px;font-size:14.5px;border-top:1px solid rgba(169,207,200,.16)}
+footer.site img{width:30px;height:30px}
 footer.site .social{margin-left:auto;display:flex;align-items:center;gap:6px}
-footer.site a{color:#8ed0c6;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;border-radius:999px;font-size:21px;line-height:1;transition:color .2s,background .2s}
-footer.site a:hover{color:#fff;background:rgba(255,255,255,.10)}
-@media(max-width:900px){
-.hero,.dom,.contact{grid-template-columns:1fr;padding-top:48px;padding-bottom:48px}
-.hero h1{font-size:36px}
-.services-grid{grid-template-columns:repeat(2,1fr)}
-.team-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
-.hero-card{left:12px}
-/* Nav collapses into a panel, but the call button stays visible */
+footer.site a{color:var(--mist);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;font-size:20px;line-height:1;transition:color .2s,background .2s}
+footer.site a:hover{color:var(--petrol);background:var(--saffron)}
+
+/* ≤ 980 */
+@media(max-width:980px){
+.pad{padding-top:80px;padding-bottom:80px}
+.hero{grid-template-columns:1fr;gap:40px;padding-top:48px;padding-bottom:88px}
+.hero-art{max-width:460px}
+.svc-layout,.dom-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+.svc-intro{position:static}
+.arch{aspect-ratio:4/3.4;border-radius:240px 240px 24px 24px;max-width:560px}
+.res-grid{grid-template-columns:1fr 1fr;gap:36px 28px}
+.res-grid>div:first-child{grid-column:1/-1}
+.reviews-grid{grid-template-columns:1fr 1fr}
+.reviews-grid>:last-child{grid-column:1/-1}
+.map{border-radius:28px;min-height:380px}
 .menu-btn{display:flex}
 .nav{gap:12px}
-.nav nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;margin-left:0;padding:6px 0 10px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 28px rgba(20,85,90,.10)}
+.nav nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;margin-left:0;padding:6px 0 10px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -12px rgba(23,67,79,.2)}
 header.menu-open nav{display:flex}
-.nav nav a{padding:14px 24px;font-size:16.5px;color:var(--deep);font-weight:600;border-bottom:1px solid var(--line)}
+.nav nav a{padding:15px 28px;font-size:17px;border-bottom:1px solid var(--line)}
+.nav nav a::after{display:none}
 .nav nav a:last-child{border-bottom:0}
 .nav .cta{margin-left:auto}
 }
-@media(max-width:560px){
-.services-grid,.reviews-grid,.pets-grid{grid-template-columns:1fr}
-.pad-tight{padding-top:48px}
-.insta{padding:28px}
-/* Tighter vertical rhythm so the page is not mostly whitespace */
-.pad{padding-top:48px;padding-bottom:48px}
-.hero,.dom,.contact{padding-top:36px;padding-bottom:36px;gap:32px}
-section h2{font-size:26px}
-.hero h1{font-size:31px}
-.hero .sub{font-size:16.5px}
-.section-sub{margin-bottom:24px;font-size:15px}
-.faq-wrap{padding-bottom:48px}
-.hero-img .photo{aspect-ratio:4/3.6}
-.dom .photo{aspect-ratio:16/10}
-.insta h2{font-size:23px}
-.contact{gap:28px}
-/* Six full-width square placeholders became ~2000px of dead scroll */
-.team-grid{grid-template-columns:1fr;gap:10px}
-.member{display:grid;grid-template-columns:60px 1fr;column-gap:14px;align-items:center;padding:12px 14px}
-.member .photo{grid-row:span 2;width:60px;height:60px;aspect-ratio:auto;border-radius:999px;font-size:11px}
-.member strong{grid-column:2;align-self:end;margin-top:0;font-size:15.5px;line-height:1.25}
-.member em{grid-column:2;align-self:start}
-/* Persistent thumb-reach actions */
-body{padding-bottom:76px}
-.mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(246,250,249,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
-.mobile-bar .btn{text-align:center;padding:13px 10px;font-size:15.5px}
+/* ≤ 640 */
+@media(max-width:640px){
+body{font-size:16px;padding-bottom:78px}
+.wrap{padding:0 18px}
+.pad{padding-top:60px;padding-bottom:60px}
+.nav{padding:10px 18px;gap:10px}
+.brand{gap:8px}.brand img{width:34px;height:34px}.brand span{font-size:20px}
+.nav .cta{padding:9px 14px;font-size:14.5px}
+.hero{padding:32px 18px 64px;gap:28px}
+.hero .sub{font-size:17px;margin:20px 0 26px}
+.hero-art{max-width:360px}
+.tag{right:-2%;top:2%;max-width:180px;font-size:13px;padding:11px 13px}
+.tag strong{font-size:15.5px}
+.services,.contact{border-radius:32px 32px 0 0}
+.menu{grid-template-columns:1fr}
+.menu h3{font-size:22px}
+.route{grid-template-columns:1fr;gap:0;margin-top:48px}
+.route::before{left:13px;right:auto;top:14px;bottom:14px;border-top:0;border-left:2px dashed rgba(232,178,58,.55)}
+.route li{text-align:left;padding:0 0 22px 44px;font-size:19px}
+.route li::before{top:4px;left:13px}
+.route small{display:inline;margin-left:8px}
+/* Team becomes a swipeable row instead of six full-width portraits */
+.team-head{margin-bottom:28px}
+.team-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;margin:0 -18px;padding:0 18px 8px;scrollbar-width:none}
+.team-grid::-webkit-scrollbar{display:none}
+.member{flex:0 0 64%;scroll-snap-align:start}
+.member strong{font-size:20px}
+.swipe{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);font-weight:700}
+.residents{margin:0 8px;border-radius:32px}
+.res-grid{grid-template-columns:1fr;gap:40px}
+.pet+.pet{transform:rotate(2deg)}
+.reviews-grid{grid-template-columns:1fr}
+.score b{font-size:36px;width:68px;height:68px}
+.insta{padding:30px 26px}
+.faq-list summary{font-size:19px;padding:20px 2px}
+.faq-list details p{padding-right:8px}
+.contact dl{grid-template-columns:1fr;gap:2px}
+.contact dt{margin-top:12px}
+.mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(241,232,221,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.mobile-bar .btn{justify-content:center;padding:13px 10px;font-size:15.5px}
 }
 @media(max-width:380px){
-.hero h1{font-size:28px}
-.brand span{font-size:17px}
-.nav .cta{padding:9px 14px;font-size:14.5px}
+.nav .cta i{display:none}
+.tag{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important}
 }
 </style>
 <script type="application/ld+json">
@@ -253,7 +396,7 @@ body{padding-bottom:76px}
 
 <header>
   <div class="nav">
-    <a class="brand" href="#topo"><img src="/assets/img/logo.png" alt="Zen Pet"><span>Zen Pet</span></a>
+    <a class="brand" href="#topo"><img src="assets/img/logo.png" alt="Zen Pet"><span>Zen Pet</span></a>
     <nav id="menu">
       <a href="#servicos">Serviços</a>
       <a href="#domicilios">Domicílios</a>
@@ -261,7 +404,7 @@ body{padding-bottom:76px}
       <a href="#faq">FAQ</a>
       <a href="#contactos">Contactos</a>
     </nav>
-    <a class="cta" href="tel:+351916840339">916 840 339</a>
+    <a class="cta" href="tel:+351916840339"><i class="bi bi-telephone-fill" aria-hidden="true"></i>916 840 339</a>
     <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
 </header>
@@ -270,160 +413,225 @@ body{padding-bottom:76px}
 
 <section class="hero" id="topo">
   <div>
-    <span class="badge">Clínica veterinária · Penafiel</span>
-    <h1>Cuidamos do seu animal com amor e tranquilidade, na clínica ou no conforto do seu lar.</h1>
-    <p class="sub">Centro veterinário e veterinário ao domicílio. A mesma saúde, sem mexer uma pata!</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn btn-primary" href="tel:+351916840339">Ligar agora</a>
-      <a class="btn btn-outline" href="https://wa.me/351916840339" target="_blank" rel="noreferrer">WhatsApp</a>
+    <span class="kicker in d1">Clínica veterinária · Penafiel</span>
+    <h1 class="in d2">Cuidamos do seu animal com <span class="mark">amor e tranquilidade</span>, <span class="soft">na clínica ou no conforto do seu lar.</span></h1>
+    <p class="sub in d3">Centro veterinário e veterinário ao domicílio. A mesma saúde, sem mexer uma pata!</p>
+    <div class="actions in d4">
+      <a class="btn btn-sun" href="tel:+351916840339"><i class="bi bi-telephone-fill" aria-hidden="true"></i>Ligar agora</a>
+      <a class="btn btn-line" href="https://wa.me/351916840339" target="_blank" rel="noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>
     </div>
-    <div class="hero-meta">
-      <span>Rua de Covas 411H, Penafiel</span><span>·</span>
-      <span>Por marcação</span><span>·</span>
-      <a href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer" style="color:var(--teal);font-weight:600;text-decoration:none">@zen__pet</a>
+    <div class="hero-meta in d5">
+      <span><i class="bi bi-geo-alt" aria-hidden="true"></i>Rua de Covas 411H, Penafiel</span>
+      <span><i class="bi bi-clock" aria-hidden="true"></i>Por marcação</span>
+      <span class="status" data-status hidden></span>
+      <a href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer"><i class="bi bi-instagram" aria-hidden="true"></i>@zen__pet</a>
     </div>
   </div>
-  <div class="hero-img">
-    <div class="photo"><img src="/assets/img/hero.jpg" alt="Receção da Zen Pet, com um quadro pintado à mão dos animais da clínica"></div>
-    <div class="hero-card"><img src="/assets/img/logo.png" alt=""><div><strong style="color:var(--deep)">Domicílios</strong><br>Vamos até si em Penafiel, Paredes, Lousada, Paços de Ferreira e Marco de Canaveses</div></div>
+  <div class="hero-art">
+    <div class="disc"><img src="assets/img/hero.jpg" alt="Receção da Zen Pet, com um quadro pintado à mão dos animais da clínica" fetchpriority="high"></div>
+    <svg class="enso" viewBox="0 0 400 400" aria-hidden="true">
+      <defs><filter id="brush"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs>
+      <path filter="url(#brush)" pathLength="1" stroke-width="11" d="M319.6 57.5 A186 186 0 1 1 238.7 18.1"/>
+      <path pathLength="1" stroke-width="2.5" d="M347.1 76.6 A192 192 0 1 1 183.3 8.7"/>
+    </svg>
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 160 160"><defs><path id="ring" d="M80 80 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/></defs><text><textPath href="#ring" textLength="362" lengthAdjust="spacing">Clínica · Domicílio · Penafiel ·</textPath></text></svg>
+      <img src="assets/img/logo.png" alt="">
+    </div>
+    <div class="tag"><strong><i class="bi bi-house-heart" aria-hidden="true"></i>Domicílios</strong>Vamos até si em Penafiel, Paredes, Lousada, Paços de Ferreira e Marco de Canaveses</div>
   </div>
 </section>
 
-<section class="band" id="servicos">
+<section class="services" id="servicos">
   <div class="wrap pad">
-    <h2>Serviços</h2>
-    <p class="section-sub">Tudo o que o seu companheiro precisa, num só lugar.</p>
-    <div class="grid services-grid">
-      <div class="card"><div class="mark"><i class="bi bi-heart-pulse" aria-hidden="true"></i></div><h3>Consulta</h3><p>Medicina preventiva e diagnóstico, com tempo e calma para cada animal.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-shield-plus" aria-hidden="true"></i></div><h3>Vacinação</h3><p>Planos de vacinação ajustados à idade e estilo de vida.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-bug" aria-hidden="true"></i></div><h3>Desparasitação</h3><p>Proteção interna e externa contra parasitas, todo o ano.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-scissors" aria-hidden="true"></i></div><h3>Cirurgia</h3><p>Cirurgias de tecidos moles e esterilizações com acompanhamento próximo.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-soundwave" aria-hidden="true"></i></div><h3>Ecografia</h3><p>Avaliação por imagem, indolor e sem stress.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-lungs" aria-hidden="true"></i></div><h3>Raio-X</h3><p>Radiografia digital para diagnósticos rápidos e precisos.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-droplet" aria-hidden="true"></i></div><h3>Análises clínicas</h3><p>Análises no próprio dia para decisões sem esperas.</p></div>
-      <div class="card"><div class="mark"><i class="bi bi-stars" aria-hidden="true"></i></div><h3>Banhos &amp; tosquias</h3><p>Higiene e estética com paciência e carinho, mesmo para os mais tímidos.</p></div>
+    <div class="svc-layout">
+      <div class="svc-intro">
+        <span class="kicker">O que fazemos</span>
+        <h2 class="h2">Serviços</h2>
+        <p class="lede">Tudo o que o seu companheiro precisa, num só lugar.</p>
+        <p class="note"><i class="bi bi-house-heart" aria-hidden="true"></i><span>Consultas, vacinação e desparasitação também podem ser feitas em sua casa.</span></p>
+      </div>
+      <ul class="menu">
+        <li><h3>Consulta</h3><i class="bi bi-heart-pulse" aria-hidden="true"></i><p>Medicina preventiva e diagnóstico, com tempo e calma para cada animal.</p></li>
+        <li><h3>Vacinação</h3><i class="bi bi-shield-plus" aria-hidden="true"></i><p>Planos de vacinação ajustados à idade e estilo de vida.</p></li>
+        <li><h3>Desparasitação</h3><i class="bi bi-bug" aria-hidden="true"></i><p>Proteção interna e externa contra parasitas, todo o ano.</p></li>
+        <li><h3>Cirurgia</h3><i class="bi bi-scissors" aria-hidden="true"></i><p>Cirurgias de tecidos moles e esterilizações com acompanhamento próximo.</p></li>
+        <li><h3>Ecografia</h3><i class="bi bi-soundwave" aria-hidden="true"></i><p>Avaliação por imagem, indolor e sem stress.</p></li>
+        <li><h3>Raio-X</h3><i class="bi bi-lungs" aria-hidden="true"></i><p>Radiografia digital para diagnósticos rápidos e precisos.</p></li>
+        <li><h3>Análises clínicas</h3><i class="bi bi-droplet" aria-hidden="true"></i><p>Análises no próprio dia para decisões sem esperas.</p></li>
+        <li><h3>Banhos &amp; tosquias</h3><i class="bi bi-stars" aria-hidden="true"></i><p>Higiene e estética com paciência e carinho, mesmo para os mais tímidos.</p></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="dom" id="domicilios">
-  <div class="photo"><img src="/assets/img/domicilio.jpg" alt="Auxiliar veterinário da Zen Pet com dois cães durante uma visita ao domicílio" loading="lazy"></div>
-  <div>
-    <h2>Veterinário ao domicílio</h2>
-    <p>Para animais ansiosos, tutores sem transporte ou famílias com mais do que um animal, vamos até si. Consultas, vacinação e acompanhamento no conforto de casa — com a mesma qualidade da clínica.</p>
-    <ul class="checks">
-      <li>Menos stress para o animal</li>
-      <li>Horário combinado consigo</li>
-      <li>Penafiel, Paredes, Lousada, Paços de Ferreira e Marco de Canaveses</li>
-    </ul>
-    <a class="btn btn-deep" href="https://wa.me/351916840339?text=Ol%C3%A1!%20Gostava%20de%20marcar%20uma%20visita%20ao%20domic%C3%ADlio." target="_blank" rel="noreferrer">Marcar visita ao domicílio</a>
+  <div class="wrap pad">
+    <div class="dom-grid">
+      <div class="arch"><img src="assets/img/domicilio.jpg" alt="Auxiliar veterinário da Zen Pet com dois cães durante uma visita ao domicílio" loading="lazy"></div>
+      <div>
+        <span class="kicker">Ao domicílio</span>
+        <h2 class="h2">Veterinário ao domicílio</h2>
+        <p class="big">Sem transportadora, sem viagem, sem sala de espera.</p>
+        <p>Para animais ansiosos, tutores sem transporte ou famílias com mais do que um animal, vamos até si. Consultas, vacinação e acompanhamento no conforto de casa — com a mesma qualidade da clínica.</p>
+        <ul class="perks">
+          <li>Menos stress para o animal</li>
+          <li>Horário combinado consigo</li>
+        </ul>
+        <a class="btn btn-sun" href="https://wa.me/351916840339?text=Ol%C3%A1!%20Gostava%20de%20marcar%20uma%20visita%20ao%20domic%C3%ADlio." target="_blank" rel="noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>Marcar visita ao domicílio</a>
+      </div>
+    </div>
+    <ol class="route" aria-label="Concelhos onde fazemos domicílios">
+      <li>Penafiel<small>a clínica</small></li>
+      <li>Paredes</li>
+      <li>Lousada</li>
+      <li>Paços de Ferreira</li>
+      <li>Marco de Canaveses</li>
+    </ol>
   </div>
 </section>
 
-<section class="team" id="equipa">
+<section id="equipa">
   <div class="wrap pad">
-    <h2>A equipa</h2>
-    <p class="section-sub">Caras conhecidas que tratam o seu animal pelo nome.</p>
-    <div class="grid team-grid">
-      <div class="member"><div class="photo"><img src="/assets/img/team/estefania-soares.jpg" alt="Dra. Estefânia Soares" loading="lazy"></div><strong>Dra. Estefânia Soares</strong><em>Diretora clínica · Médica veterinária</em></div>
-      <div class="member"><div class="photo"><img src="/assets/img/team/sofia-almeida.jpg" alt="Dra. Sofia Almeida" loading="lazy"></div><strong>Dra. Sofia Almeida</strong><em>Médica veterinária</em></div>
-      <div class="member"><div class="photo"><img src="/assets/img/team/beatriz-pinto.jpg" alt="Dra. Beatriz Pinto" loading="lazy"></div><strong>Dra. Beatriz Pinto</strong><em>Médica veterinária</em></div>
-      <div class="member"><div class="photo"><img src="/assets/img/team/armindo-silva.jpg" alt="Enf. Armindo Silva" loading="lazy"></div><strong>Enf. Armindo Silva</strong><em>Enfermeiro veterinário</em></div>
-      <div class="member"><div class="photo"><img src="/assets/img/team/liliana-ribeiro.jpg" alt="Liliana Ribeiro" loading="lazy"></div><strong>Liliana Ribeiro</strong><em>Auxiliar veterinária</em></div>
-      <div class="member"><div class="photo"><img src="/assets/img/team/pedro-lourenco.jpg" alt="Pedro Lourenço" loading="lazy"></div><strong>Pedro Lourenço</strong><em>Auxiliar veterinário</em></div>
+    <div class="team-head">
+      <div>
+        <span class="kicker">Quem cuida</span>
+        <h2 class="h2">A equipa</h2>
+        <p class="lede">Caras conhecidas que tratam o seu animal pelo nome.</p>
+      </div>
+      <span class="swipe" aria-hidden="true">Deslize <i class="bi bi-arrow-right"></i></span>
+    </div>
+    <div class="team-grid">
+      <div class="member"><div class="photo"><img src="assets/img/team/estefania-soares.jpg" alt="Dra. Estefânia Soares" loading="lazy"></div><strong>Dra. Estefânia Soares</strong><em>Diretora clínica · Médica veterinária</em></div>
+      <div class="member"><div class="photo"><img src="assets/img/team/sofia-almeida.jpg" alt="Dra. Sofia Almeida" loading="lazy"></div><strong>Dra. Sofia Almeida</strong><em>Médica veterinária</em></div>
+      <div class="member"><div class="photo"><img src="assets/img/team/beatriz-pinto.jpg" alt="Dra. Beatriz Pinto" loading="lazy"></div><strong>Dra. Beatriz Pinto</strong><em>Médica veterinária</em></div>
+      <div class="member"><div class="photo"><img src="assets/img/team/armindo-silva.jpg" alt="Enf. Armindo Silva" loading="lazy"></div><strong>Enf. Armindo Silva</strong><em>Enfermeiro veterinário</em></div>
+      <div class="member"><div class="photo"><img src="assets/img/team/liliana-ribeiro.jpg" alt="Liliana Ribeiro" loading="lazy"></div><strong>Liliana Ribeiro</strong><em>Auxiliar veterinária</em></div>
+      <div class="member"><div class="photo"><img src="assets/img/team/pedro-lourenco.jpg" alt="Pedro Lourenço" loading="lazy"></div><strong>Pedro Lourenço</strong><em>Auxiliar veterinário</em></div>
     </div>
   </div>
 </section>
 
-<section class="band" id="mascotes">
+<section class="residents" id="mascotes">
   <div class="wrap pad">
-    <h2>As mascotes</h2>
-    <p class="section-sub">Os residentes da clínica, sempre por perto para receber quem chega.</p>
-    <div class="grid pets-grid">
-      <div class="pet">
-        <div class="photo"><img src="/assets/img/pets/yang.jpg" alt="Yang, gato residente da Zen Pet, deitado numa cadeira" loading="lazy"></div>
-        <div class="pet-body">
-          <h3>Yang</h3>
-          <p>Mestre da fuga e do roubo de comida. Adora mimos na barriga e saltar para o colo.</p>
-        </div>
+    <div class="res-grid">
+      <div>
+        <span class="kicker">Residentes</span>
+        <h2 class="h2">As mascotes</h2>
+        <p class="lede">O Fú e a nova mascote, Rafinha, estão por perto para receber quem chega. O Yang fica para sempre na nossa memória.</p>
       </div>
       <div class="pet">
-        <div class="photo"><img src="/assets/img/pets/fu.jpg" alt="Fú, gato residente da Zen Pet" loading="lazy"></div>
-        <div class="pet-body">
-          <h3>Fú</h3>
-          <p>O anfitrião. Mas se não tiverem cuidado, correm o risco de ficar hipnotizados pelos seus olhos azuis. Gosta de comer e de roubar comida.</p>
-        </div>
+        <div class="photo"><img src="assets/img/pets/fu.jpg" alt="Fú, gato residente da Zen Pet" loading="lazy"></div>
+        <h3>Fú</h3>
+        <p>O anfitrião. Mas se não tiverem cuidado, correm o risco de ficar hipnotizados pelos seus olhos azuis. Gosta de comer e de roubar comida.</p>
+      </div>
+      <div class="pet">
+        <!-- Quando houver foto: guardar em assets/img/pets/rafinha.jpg e trocar este bloco por
+             <div class="photo"><img src="assets/img/pets/rafinha.jpg" alt="Rafinha, mascote da Zen Pet" loading="lazy"></div> -->
+        <div class="photo soon" role="img" aria-label="Foto da Rafinha em breve"><span><img src="assets/img/logo.png" alt="">Foto em breve</span></div>
+        <span class="new-badge">Novidade</span>
+        <h3>Rafinha</h3>
+        <p>A mais recente mascote da clínica. As apresentações completas vêm em breve!</p>
+      </div>
+      <div class="pet memorial">
+        <div class="photo"><img src="assets/img/pets/yang.jpg" alt="Yang, gato que viveu na Zen Pet, deitado numa cadeira" loading="lazy"></div>
+        <span class="in-memoriam">Em memória</span>
+        <h3>Yang</h3>
+        <p>Mestre da fuga e do roubo de comida. Adorava mimos na barriga e saltar para o colo.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section id="testemunhos">
-  <div class="wrap pad-tight">
-    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px">
-      <h2>O que dizem os clientes</h2>
-      <span class="review-badge"><span class="stars">★★★★★</span> 5,0 no Google</span>
+  <div class="wrap pad">
+    <div class="reviews-head">
+      <div>
+        <span class="kicker">Avaliações no Google</span>
+        <h2 class="h2">O que dizem os clientes</h2>
+      </div>
+      <div class="score"><b>5,0</b><div><div class="stars" aria-label="5 estrelas">★★★★★</div><span>Avaliação média no Google</span></div></div>
     </div>
-    <p class="section-sub" style="margin-bottom:32px">Avaliações de clientes no Google.</p>
-    <div class="grid reviews-grid">
-      <div class="review">
-        <span class="stars">★★★★★</span>
+    <div class="reviews-grid">
+      <figure class="review" style="margin:0">
         <p>“Não tenho palavras para descrever o rigor e profissionalismo desta clínica. É o único sítio onde a minha cadela entra extremamente feliz, sempre à procura do Sr. Pedro e da Dra. Estefânia. Já se tornaram família e não confiaria em mais ninguém para tomar conta dos meus filhos de 4 patas. Obrigada por tudo ♥️”</p>
-        <footer><span class="avatar">D</span>Daniela Silva</footer>
-      </div>
-      <div class="review">
-        <span class="stars">★★★★★</span>
+        <footer><span class="avatar" aria-hidden="true">D</span>Daniela Silva</footer>
+      </figure>
+      <figure class="review" style="margin:0">
         <p>“Desde o momento em que entramos, sentimos um carinho, uma empatia e um profissionalismo incríveis. 🤍 Tratam os nossos animais como se fossem deles! O atendimento é humanizado, as instalações são impecáveis e explicam tudo com muita clareza. Recomendo a 100% a quem procura o melhor cuidado para o seu animal ✨”</p>
-        <footer><span class="avatar">V</span>Vera Moreira</footer>
-      </div>
-      <div class="review">
-        <span class="stars">★★★★★</span>
+        <footer><span class="avatar" aria-hidden="true">V</span>Vera Moreira</footer>
+      </figure>
+      <figure class="review" style="margin:0">
         <p lang="en">“A wonderful and competent vet who uses science, experience and intuition ! Fluent english and comfortable with large dogs and does not overtreat with antibiotics.”</p>
-        <footer><span class="avatar">R</span>Rachel Z.</footer>
-      </div>
+        <footer><span class="avatar" aria-hidden="true">R</span>Rachel Z.</footer>
+      </figure>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap" style="padding:64px 24px">
+  <div class="wrap" style="padding-bottom:104px">
     <div class="insta">
-      <div style="flex:1;min-width:280px">
+      <div style="flex:1;min-width:260px;position:relative;z-index:1">
         <h2>Novidades todos os dias</h2>
         <p>Dicas de saúde, casos do dia a dia e os pacientes que passam pela clínica — siga-nos no Instagram.</p>
       </div>
-      <a class="btn btn-primary" href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer" style="white-space:nowrap">Seguir @zen__pet</a>
+      <a class="btn" href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer"><i class="bi bi-instagram" aria-hidden="true"></i>Seguir @zen__pet</a>
     </div>
   </div>
 </section>
 
-<section class="faq-wrap" id="faq">
-  <h2 style="margin-bottom:28px">Perguntas frequentes</h2>
-  <details open><summary>Preciso de marcação para uma consulta?</summary><p>Sim, recomendamos marcação por telefone ou WhatsApp para reduzir o tempo de espera. Em situações urgentes, ligue-nos e faremos o possível para o atender de imediato.</p></details>
-  <details><summary>Como funcionam as visitas ao domicílio?</summary><p>Combina connosco o dia e a hora, e a equipa desloca-se a sua casa com o equipamento necessário para consultas, vacinação e acompanhamento.</p></details>
-  <details><summary>Que áreas cobrem nos domicílios?</summary><p>Penafiel, Paredes, Lousada, Paços de Ferreira e Marco de Canaveses. Contacte-nos para confirmar a sua zona.</p></details>
-  <details><summary>Atendem animais exóticos?</summary><p>Contacte-nos previamente para confirmarmos se podemos ajudar o seu animal ou encaminhá-lo para o colega certo.</p></details>
-  <details><summary>Quais os meios de pagamento?</summary><p>Aceitamos numerário, multibanco e MB Way.</p></details>
-</section>
-
-<section class="band" id="contactos">
-  <div class="contact">
-    <div>
-      <h2>Contactos &amp; horário</h2>
-      <dl>
-        <dt>Morada</dt><dd>Rua de Covas 411H, 4560-656 Penafiel</dd>
-        <dt>Telemóvel</dt><dd><a href="tel:+351916840339" style="text-decoration:none">916 840 339</a></dd>
-        <dt>Fixo</dt><dd><a href="tel:+351255212739" style="text-decoration:none">255 212 739</a></dd>
-        <dt>Horário</dt><dd>Por marcação, no horário de funcionamento:<br>Segunda a sexta — 10h00 às 12h30 e 14h30 às 19h00<br>Sábado — 10h00 às 13h00</dd>
-        <dt>Domicílios</dt><dd>Penafiel · Paredes · Lousada · Paços de Ferreira · Marco de Canaveses</dd>
-      </dl>
-      <div style="display:flex;gap:12px">
-        <a class="btn btn-primary" href="tel:+351916840339" style="font-size:15.5px;padding:13px 24px">Ligar</a>
-        <a class="btn btn-outline" href="https://wa.me/351916840339" target="_blank" rel="noreferrer" style="font-size:15.5px;padding:13px 24px">WhatsApp</a>
+<section id="faq">
+  <div class="wrap" style="padding-bottom:104px">
+    <div class="faq-grid">
+      <div>
+        <span class="kicker">Dúvidas</span>
+        <h2 class="h2">Perguntas frequentes</h2>
+        <p class="lede">Não encontra a resposta? Ligue-nos para o <a href="tel:+351916840339" style="font-weight:700;white-space:nowrap">916 840 339</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Preciso de marcação para uma consulta?</summary><p>Sim, recomendamos marcação por telefone ou WhatsApp para reduzir o tempo de espera. Em situações urgentes, ligue-nos e faremos o possível para o atender de imediato.</p></details>
+        <details><summary>Como funcionam as visitas ao domicílio?</summary><p>Combina connosco o dia e a hora, e a equipa desloca-se a sua casa com o equipamento necessário para consultas, vacinação e acompanhamento.</p></details>
+        <details><summary>Que áreas cobrem nos domicílios?</summary><p>Penafiel, Paredes, Lousada, Paços de Ferreira e Marco de Canaveses. Contacte-nos para confirmar a sua zona.</p></details>
+        <details><summary>Atendem animais exóticos?</summary><p>Contacte-nos previamente para confirmarmos se podemos ajudar o seu animal ou encaminhá-lo para o colega certo.</p></details>
+        <details><summary>Quais os meios de pagamento?</summary><p>Aceitamos numerário, multibanco e MB Way.</p></details>
       </div>
     </div>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.393413657437!2d-8.286775623463564!3d41.21319640678116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd249100605084af%3A0x6ea720e1016a17dd!2sZenPet%20Veterin%C3%A1ria!5e0!3m2!1sen!2spt!4v1724605697082!5m2!1sen!2spt" loading="lazy" title="Mapa Zen Pet" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="contact" id="contactos">
+  <div class="wrap pad">
+    <div class="contact-grid">
+      <div>
+        <span class="kicker">Visite-nos</span>
+        <h2 class="h2">Contactos &amp; horário</h2>
+        <dl>
+          <dt>Morada</dt><dd>Rua de Covas 411H, 4560-656 Penafiel</dd>
+          <dt>Telemóvel</dt><dd><a href="tel:+351916840339">916 840 339</a></dd>
+          <dt>Fixo</dt><dd><a href="tel:+351255212739">255 212 739</a></dd>
+          <dt>Horário</dt><dd>Por marcação, no horário de funcionamento:<br>Segunda a sexta — 10h00 às 12h30 e 14h30 às 19h00<br>Sábado — 10h00 às 13h00</dd>
+          <dt>Domicílios</dt><dd>Penafiel · Paredes · Lousada · Paços de Ferreira · Marco de Canaveses</dd>
+        </dl>
+        <div class="hours" aria-hidden="true">
+          <h3>A semana <span class="status" data-status hidden></span></h3>
+          <div class="day" data-day="1"><span>Seg</span><div class="bar"><i style="--s:10;--e:12.5"></i><i style="--s:14.5;--e:19"></i></div></div>
+          <div class="day" data-day="2"><span>Ter</span><div class="bar"><i style="--s:10;--e:12.5"></i><i style="--s:14.5;--e:19"></i></div></div>
+          <div class="day" data-day="3"><span>Qua</span><div class="bar"><i style="--s:10;--e:12.5"></i><i style="--s:14.5;--e:19"></i></div></div>
+          <div class="day" data-day="4"><span>Qui</span><div class="bar"><i style="--s:10;--e:12.5"></i><i style="--s:14.5;--e:19"></i></div></div>
+          <div class="day" data-day="5"><span>Sex</span><div class="bar"><i style="--s:10;--e:12.5"></i><i style="--s:14.5;--e:19"></i></div></div>
+          <div class="day" data-day="6"><span>Sáb</span><div class="bar"><i style="--s:10;--e:13"></i></div></div>
+          <div class="day" data-day="0"><span>Dom</span><div class="bar"></div></div>
+          <div class="scale"><span></span><div><span>9h</span><span>12h</span><span>15h</span><span>18h</span><span>20h</span></div></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-sun" href="tel:+351916840339"><i class="bi bi-telephone-fill" aria-hidden="true"></i>Ligar</a>
+          <a class="btn btn-line" href="https://wa.me/351916840339" target="_blank" rel="noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.393413657437!2d-8.286775623463564!3d41.21319640678116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd249100605084af%3A0x6ea720e1016a17dd!2sZenPet%20Veterin%C3%A1ria!5e0!3m2!1sen!2spt!4v1724605697082!5m2!1sen!2spt" loading="lazy" title="Mapa Zen Pet" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -431,8 +639,9 @@ body{padding-bottom:76px}
 </main>
 
 <footer class="site">
+  <div class="wordmark" aria-hidden="true">Zen Pet</div>
   <div class="wrap">
-    <img src="/assets/img/logo.png" alt="">
+    <img src="assets/img/logo.png" alt="">
     <span>© 2026 Zen Pet — Clínica Veterinária, Penafiel</span>
     <div class="social">
       <a href="https://www.instagram.com/zen__pet/" target="_blank" rel="noreferrer" aria-label="Zen Pet no Instagram" title="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
@@ -442,8 +651,8 @@ body{padding-bottom:76px}
 </footer>
 
 <div class="mobile-bar">
-  <a class="btn btn-primary" href="tel:+351916840339">Ligar agora</a>
-  <a class="btn btn-outline" href="https://wa.me/351916840339" target="_blank" rel="noreferrer">WhatsApp</a>
+  <a class="btn btn-sun" href="tel:+351916840339"><i class="bi bi-telephone-fill" aria-hidden="true"></i>Ligar agora</a>
+  <a class="btn btn-line" href="https://wa.me/351916840339" target="_blank" rel="noreferrer" style="background:var(--paper)"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>
 </div>
 
 <script>
@@ -460,6 +669,25 @@ body{padding-bottom:76px}
     a.addEventListener('click',function(){setOpen(false);});
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+})();
+/* Opening-hours status, in Lisbon time regardless of the visitor's zone */
+(function(){
+  try{
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    var p={};parts.forEach(function(x){p[x.type]=x.value;});
+    var day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday);
+    var t=parseInt(p.hour,10)+parseInt(p.minute,10)/60;
+    var week=[[10,12.5],[14.5,19]];
+    var slots=day>=1&&day<=5?week:day===6?[[10,13]]:[];
+    var open=slots.some(function(s){return t>=s[0]&&t<s[1];});
+    document.querySelectorAll('[data-status]').forEach(function(el){
+      el.textContent=open?'Dentro do horário':'Fora do horário';
+      el.classList.toggle('open',open);
+      el.hidden=false;
+    });
+    var row=document.querySelector('.day[data-day="'+day+'"]');
+    if(row)row.classList.add('today');
+  }catch(e){}
 })();
 </script>
 
