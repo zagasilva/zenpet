@@ -125,6 +125,24 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
+/* Announcement — the move to bigger premises, drawn as a floor plan that outgrows the old one */
+.news{margin-top:-56px;padding-bottom:88px}
+.grow{display:grid;grid-template-columns:1.35fr .85fr;gap:44px;align-items:center;padding:44px 48px;border-radius:var(--r-lg);color:#d9e8e5;background:var(--grain),radial-gradient(620px 320px at 88% 15%,#2a6b78,transparent 70%),var(--petrol);box-shadow:0 40px 70px -50px rgba(23,67,79,.8)}
+.grow .kicker{color:var(--saffron)}
+.grow h2{color:var(--paper);font-size:clamp(30px,3.4vw,44px);line-height:1.06;margin-top:14px;text-wrap:balance}
+.grow p{margin:16px 0 0;font-size:17.5px;line-height:1.6;color:#cfe1dd;max-width:50ch}
+.grow p strong{color:var(--saffron-2);font-weight:700}
+.plan{width:100%;height:auto;overflow:visible}
+.plan .big{fill:rgba(232,178,58,.08);stroke:var(--saffron);stroke-width:2.5;stroke-dasharray:7 6}
+.plan .old{fill:rgba(169,207,200,.22);stroke:var(--mist);stroke-width:2}
+.plan .wall{stroke:rgba(232,178,58,.45);stroke-width:1.5;stroke-dasharray:4 5}
+.plan text{font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.plan .t-big{fill:var(--saffron)}.plan .t-old{fill:var(--mist)}
+@supports (animation-timeline:view()){
+  .plan .grow-in{transform-box:fill-box;transform-origin:0 100%;animation:outgrow linear both;animation-timeline:view();animation-range:entry 15% cover 45%}
+}
+@keyframes outgrow{from{transform:scale(.32);opacity:.4}to{transform:none;opacity:1}}
+
 /* Services — a menu, not a card grid */
 .services{background:var(--paper);border-radius:48px 48px 0 0;position:relative}
 .svc-layout{display:grid;grid-template-columns:.8fr 1.6fr;gap:64px;align-items:start}
@@ -246,8 +264,7 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 
 /* Footer */
 footer.site{background:var(--grain),var(--petrol);color:var(--mist);overflow:hidden}
-footer.site .wordmark{font-family:var(--display);font-size:clamp(72px,17vw,230px);line-height:.8;color:rgba(169,207,200,.12);letter-spacing:-.02em;white-space:nowrap;padding:56px 28px 0;max-width:1180px;margin:0 auto;user-select:none}
-footer.site .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:32px;font-size:14.5px;border-top:1px solid rgba(169,207,200,.16)}
+footer.site .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:32px;padding-bottom:32px;font-size:14.5px}
 footer.site img{width:30px;height:30px}
 footer.site .social{margin-left:auto;display:flex;align-items:center;gap:6px}
 footer.site a{color:var(--mist);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;font-size:20px;line-height:1;transition:color .2s,background .2s}
@@ -277,6 +294,10 @@ header.menu-open nav{display:flex}
 }
 /* ≤ 640 */
 @media(max-width:640px){
+.news{margin-top:-32px;padding-bottom:56px}
+.grow{grid-template-columns:1fr;gap:28px;padding:30px 24px}
+.grow p{font-size:16.5px}
+.plan{max-width:300px}
 body{font-size:16px;padding-bottom:78px}
 .wrap{padding:0 18px}
 .pad{padding-top:60px;padding-bottom:60px}
@@ -439,6 +460,27 @@ html{scroll-behavior:auto}
       <img src="assets/img/logo.png" alt="">
     </div>
     <div class="tag"><strong><i class="bi bi-house-heart" aria-hidden="true"></i>Domicílios</strong>Vamos até si em Penafiel, Paredes, Lousada, Paços de Ferreira e Marco de Canaveses</div>
+  </div>
+</section>
+
+<section class="news" id="novidades" aria-labelledby="novidades-titulo">
+  <div class="wrap">
+    <div class="grow">
+      <div>
+        <span class="kicker">Novidade</span>
+        <h2 id="novidades-titulo">Estamos a crescer: vamos mudar para instalações muito maiores</h2>
+        <p>Praticamente no mesmo sítio, mas com <strong>muito mais espaço</strong> para receber mais animais e ajudar mais famílias. Em breve partilhamos todos os detalhes.</p>
+      </div>
+      <svg class="plan" viewBox="0 0 240 160" aria-hidden="true">
+        <g class="grow-in">
+          <rect class="big" x="6" y="6" width="228" height="148" rx="10"/>
+          <path class="wall" d="M120 6v62M120 104v50M6 88h70M160 88h74"/>
+          <text class="t-big" x="224" y="24" text-anchor="end">Em breve</text>
+        </g>
+        <rect class="old" x="18" y="104" width="62" height="38" rx="6"/>
+        <text class="t-old" x="49" y="96" text-anchor="middle">Hoje</text>
+      </svg>
+    </div>
   </div>
 </section>
 
@@ -639,7 +681,6 @@ html{scroll-behavior:auto}
 </main>
 
 <footer class="site">
-  <div class="wordmark" aria-hidden="true">Zen Pet</div>
   <div class="wrap">
     <img src="assets/img/logo.png" alt="">
     <span>© 2026 Zen Pet — Clínica Veterinária, Penafiel</span>
