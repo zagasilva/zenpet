@@ -336,6 +336,12 @@ body{font-size:16px;padding-bottom:78px}
 .contact dt{margin-top:12px}
 .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(241,232,221,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
 .mobile-bar .btn{justify-content:center;padding:13px 10px;font-size:15.5px}
+/* The bar repeats the hero's buttons, so it waits until those have scrolled away.
+   Only when JS can watch them (.cta-watch); without JS the bar simply stays visible.
+   visibility flips after the slide-out so hidden buttons can't be tapped or focused. */
+.cta-watch .mobile-bar{transition:transform .26s var(--ease),visibility 0s linear .26s}
+.cta-watch .mobile-bar:not(.show){transform:translateY(100%);visibility:hidden}
+.cta-watch .mobile-bar.show{transition-delay:0s}
 }
 @media(max-width:380px){
 .nav .cta i{display:none}
@@ -344,6 +350,10 @@ body{font-size:16px;padding-bottom:78px}
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important}
+/* Bottom bar: a gentle fade in place of the slide */
+.cta-watch .mobile-bar{transition:opacity .2s ease,visibility 0s linear .2s!important}
+.cta-watch .mobile-bar:not(.show){transform:none;opacity:0}
+.cta-watch .mobile-bar.show{transition-delay:0s!important}
 }
 </style>
 <script type="application/ld+json">
@@ -710,6 +720,15 @@ html{scroll-behavior:auto}
     a.addEventListener('click',function(){setOpen(false);});
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+})();
+/* Show the bottom call/WhatsApp bar only once the hero's own buttons are off screen */
+(function(){
+  var bar=document.querySelector('.mobile-bar'),hero=document.querySelector('.hero .actions');
+  if(!bar||!hero||!('IntersectionObserver' in window))return;
+  document.documentElement.classList.add('cta-watch');
+  new IntersectionObserver(function(entries){
+    bar.classList.toggle('show',!entries[0].isIntersecting);
+  }).observe(hero);
 })();
 /* Opening-hours status, in Lisbon time regardless of the visitor's zone */
 (function(){
