@@ -31,7 +31,7 @@
 /* Ensō & reboco — warm limewash walls, the petrol of the logo, the saffron of the reception's cat bust */
 :root{
   --plaster:#f1e8dd;--plaster-2:#e7dac9;--paper:#fbf7f1;
-  --petrol:#17434f;--petrol-2:#1f5663;--teal:#278189;--mist:#a9cfc8;
+  --petrol:#17434f;--petrol-2:#1f5663;--teal:#278189;--teal-ink:#1d6a71;--mist:#a9cfc8;
   --saffron:#e8b23a;--saffron-2:#f3cd6e;--clay:#b5603a;
   --ink:#1d2b2d;--muted:#4c5a5a;--line:rgba(23,67,79,.16);
   --display:'Caprasimo',Georgia,serif;--body:'Atkinson Hyperlegible',Verdana,sans-serif;
@@ -43,7 +43,9 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--body);font-size:17px;color:var(--ink);line-height:1.55;
   background:var(--grain),radial-gradient(1100px 620px at 8% -6%,#fbf1df 0%,transparent 60%),radial-gradient(900px 700px at 100% 30%,#eadfce 0%,transparent 65%),var(--plaster)}
 section[id]{scroll-margin-top:84px}
-a{color:var(--petrol)}a:hover{color:var(--teal)}
+a{color:var(--petrol);text-underline-offset:.2em;text-decoration-thickness:1.5px}a:hover{color:var(--teal)}
+::selection{background:var(--saffron);color:var(--petrol)}
+html{scrollbar-color:var(--petrol-2) var(--plaster);accent-color:var(--teal)}
 h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.005em;color:var(--petrol)}
 img{display:block;max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
@@ -53,17 +55,15 @@ img{display:block;max-width:100%}
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:999px;font-weight:700;font-size:16.5px;padding:15px 26px;transition:transform .25s var(--ease),background .2s,box-shadow .25s,color .2s;white-space:nowrap}
 .btn i{font-size:18px;line-height:1}
-.btn-sun{background:var(--saffron);color:var(--petrol);box-shadow:0 2px 0 #c58f1c,0 14px 28px -14px rgba(197,143,28,.9)}
-.btn-sun:hover{color:var(--petrol);background:var(--saffron-2);transform:translateY(-2px)}
+.btn-sun{background:var(--saffron);color:var(--petrol);box-shadow:0 12px 26px -12px rgba(197,143,28,.85)}
+.btn-sun:hover{color:var(--petrol);background:var(--saffron-2)}
 .btn-line{color:var(--petrol);border:1.5px solid var(--petrol);background:transparent}
 .btn-line:hover{background:var(--petrol);color:var(--paper)}
 .btn-ghost{color:var(--paper);border:1.5px solid rgba(251,247,241,.5)}
 .btn-ghost:hover{background:var(--paper);color:var(--petrol)}
 
 /* Kicker */
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
-.kicker::before{content:"";width:14px;height:14px;border-radius:50%;border:2.5px solid currentColor;border-right-color:transparent;transform:rotate(-30deg)}
-.h2{font-size:clamp(34px,4.4vw,54px);line-height:1.04;margin:14px 0 0}
+.h2{font-size:clamp(34px,4.4vw,54px);line-height:1.04;margin:0}
 .lede{font-size:18px;color:var(--muted);margin:18px 0 0;max-width:44ch}
 
 /* Header */
@@ -89,8 +89,8 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 
 /* Hero */
 .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:80px 28px 112px;max-width:1180px;margin:0 auto}
-.hero h1{font-size:clamp(40px,5vw,66px);line-height:1.02;margin:22px 0 0;text-wrap:balance}
-.hero h1 .soft{display:block;color:var(--teal);margin-top:.18em;font-size:.62em;line-height:1.12}
+.hero h1{font-size:clamp(40px,5vw,66px);line-height:1.02;margin:0;text-wrap:balance}
+.hero h1 .soft{display:block;color:var(--teal-ink);margin-top:.18em;font-size:.62em;line-height:1.12}
 .hero h1 .mark{background:linear-gradient(transparent 62%,rgba(232,178,58,.55) 62%,rgba(232,178,58,.55) 90%,transparent 90%);padding:0 .06em}
 .hero .sub{font-size:19px;color:var(--muted);max-width:40ch;margin:26px 0 32px}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
@@ -100,8 +100,7 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .hero-meta a{text-decoration:none;font-weight:700}
 .status{font-weight:700;color:var(--petrol)}
 .status::before{content:"";width:9px;height:9px;border-radius:50%;background:#9aa6a5;box-shadow:0 0 0 4px rgba(154,166,165,.22)}
-.status.open::before{background:#3a9d6b;box-shadow:0 0 0 4px rgba(58,157,107,.22);animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(58,157,107,.05)}}
+.status.open::before{background:#3a9d6b;box-shadow:0 0 0 4px rgba(58,157,107,.22)}
 
 .hero-art{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center}
 .hero-art .disc{position:absolute;inset:7%;border-radius:50%;overflow:hidden;background:var(--petrol);box-shadow:0 40px 80px -40px rgba(23,67,79,.55)}
@@ -121,15 +120,14 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .tag strong i{color:var(--clay);font-size:16px}
 
 /* Staggered entrance */
-.in{opacity:0;animation:rise .9s var(--ease) forwards}
-.d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.in{animation:rise .7s var(--ease) both}
+.d2{animation-delay:0s}.d3{animation-delay:.07s}.d4{animation-delay:.14s}.d5{animation-delay:.21s}
+@keyframes rise{from{opacity:.4;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* Announcement — the move to bigger premises, drawn as a floor plan that outgrows the old one */
 .news{margin-top:-56px;padding-bottom:88px}
 .grow{display:grid;grid-template-columns:1.35fr .85fr;gap:44px;align-items:center;padding:44px 48px;border-radius:var(--r-lg);color:#d9e8e5;background:var(--grain),radial-gradient(620px 320px at 88% 15%,#2a6b78,transparent 70%),var(--petrol);box-shadow:0 40px 70px -50px rgba(23,67,79,.8)}
-.grow .kicker{color:var(--saffron)}
-.grow h2{color:var(--paper);font-size:clamp(30px,3.4vw,44px);line-height:1.06;margin-top:14px;text-wrap:balance}
+.grow h2{color:var(--paper);font-size:clamp(30px,3.4vw,44px);line-height:1.06;margin:0;text-wrap:balance}
 .grow p{margin:16px 0 0;font-size:17.5px;line-height:1.6;color:#cfe1dd;max-width:50ch}
 .grow p strong{color:var(--saffron-2);font-weight:700}
 .plan{width:100%;height:auto;overflow:visible}
@@ -139,9 +137,10 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .plan text{font-family:var(--body);font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
 .plan .t-big{fill:var(--saffron)}.plan .t-old{fill:var(--mist)}
 @supports (animation-timeline:view()){
-  .plan .grow-in{transform-box:fill-box;transform-origin:0 100%;animation:outgrow linear both;animation-timeline:view();animation-range:entry 15% cover 45%}
+  .plan .grow-in{animation:outgrow linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
 }
-@keyframes outgrow{from{transform:scale(.32);opacity:.4}to{transform:none;opacity:1}}
+/* Revealed outward from the corner where today's space sits: every in-between frame still reads as a plan */
+@keyframes outgrow{from{clip-path:inset(52% 62% 0 0)}to{clip-path:inset(-4% -4% -4% -4%)}}
 
 /* Services — a menu, not a card grid */
 .services{background:var(--paper);border-radius:48px 48px 0 0;position:relative}
@@ -149,23 +148,22 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .svc-intro{position:sticky;top:120px}
 .svc-intro .note{margin-top:28px;display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:var(--plaster);font-size:15px;color:var(--muted)}
 .svc-intro .note i{color:var(--clay);font-size:20px;line-height:1.2}
-.menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:44px;counter-reset:svc}
-.menu li{counter-increment:svc;display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:baseline;padding:24px 4px 26px;border-top:1px solid var(--line);transition:background .3s}
-.menu li::before{content:counter(svc,decimal-leading-zero);font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.06em}
+.menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:44px}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline;padding:24px 4px 26px;border-top:1px solid var(--line);transition:background .3s}
 .menu h3{font-size:25px;line-height:1.15}
-.menu p{grid-column:2/4;margin:0;font-size:15.5px;color:var(--muted);max-width:34ch}
-.menu i{grid-row:1;grid-column:3;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:19px;color:var(--petrol);background:var(--plaster);transition:background .3s,color .3s,transform .4s var(--ease)}
-.menu li:hover i{background:var(--saffron);transform:rotate(-12deg) scale(1.08)}
+.menu p{grid-column:1/-1;margin:0;font-size:15.5px;color:var(--muted);max-width:34ch}
+.menu i{grid-row:1;grid-column:2;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:19px;color:var(--petrol);background:var(--plaster);transition:background .3s,color .3s,transform .4s var(--ease)}
+.menu li:hover i{background:var(--saffron)}
 
 /* Domicílio — petrol, arched photo, the route */
 .dom{background:var(--grain),radial-gradient(800px 500px at 90% 10%,#23606d,transparent 60%),var(--petrol);color:#d9e8e5}
 .dom-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
 .arch{border-radius:999px 999px 26px 26px;overflow:hidden;aspect-ratio:4/5;border:10px solid rgba(251,247,241,.08);box-shadow:0 40px 70px -40px rgba(0,0,0,.6)}
 .arch img{width:100%;height:100%;object-fit:cover;object-position:45% 50%}
-.dom .kicker{color:var(--saffron)}
 .dom h2{color:var(--paper)}
-.dom .big{font-family:var(--display);font-size:clamp(22px,2.3vw,28px);line-height:1.25;color:var(--saffron-2);margin:22px 0 0}
+.dom .big{font-family:var(--display);font-size:clamp(22px,2.3vw,28px);line-height:1.3;color:var(--saffron-2);margin:22px 0 0}
 .dom p{font-size:17.5px;line-height:1.65;margin:18px 0 0;color:#cfe1dd;max-width:52ch}
+.dom .btn-sun{box-shadow:0 14px 28px -14px rgba(0,0,0,.5)}
 .perks{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px;padding:0;list-style:none}
 .perks li{border:1px solid rgba(169,207,200,.35);border-radius:999px;padding:8px 16px;font-size:15px;font-weight:700;color:var(--paper)}
 .route{margin:72px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
@@ -180,7 +178,6 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 32px}
 .member .photo{border-radius:999px 999px 22px 22px;overflow:hidden;aspect-ratio:5/6;background:var(--plaster-2)}
 .member .photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.member:hover .photo img{transform:scale(1.05)}
 .member strong{display:block;font-family:var(--display);font-weight:400;font-size:23px;color:var(--petrol);margin-top:16px;line-height:1.2}
 .member em{font-style:normal;font-size:15px;color:var(--muted)}
 .swipe{display:none}
@@ -192,11 +189,9 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .pet .photo.soon{display:grid;place-items:center;text-align:center;background:var(--grain),radial-gradient(circle at 50% 42%,#2a6b78,var(--petrol) 70%);color:var(--paper)}
 .photo.soon span{display:grid;justify-items:center;gap:12px;font-family:var(--display);font-size:22px}
 .pet .photo.soon img{width:72px;height:72px;padding:14px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 6px var(--petrol),0 0 0 8px rgba(232,178,58,.75)}
-.pet .new-badge{display:inline-block;margin:16px 6px 0;padding:3px 10px;border-radius:999px;background:var(--saffron);color:var(--petrol);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.pet .new-badge+h3{margin-top:6px}
+.pet .new-badge{display:inline-block;vertical-align:middle;margin:-4px 0 0 8px;padding:3px 10px;font-family:var(--body);border-radius:999px;background:var(--saffron);color:var(--petrol);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .pet{background:var(--paper);padding:14px 14px 22px;border-radius:8px;box-shadow:0 24px 40px -26px rgba(23,67,79,.55);position:relative;transform:rotate(-2.5deg);transition:transform .5s var(--ease)}
 .pet+.pet{transform:rotate(2deg) translateY(28px)}
-.pet:hover{transform:rotate(0) translateY(-6px)}
 .pet::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:rgba(232,178,58,.72);transform:rotate(-3deg);border-radius:3px}
 .pet .photo{aspect-ratio:1;overflow:hidden;border-radius:4px}
 .pet .photo img{width:100%;height:100%;object-fit:cover}
@@ -206,8 +201,8 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .res-grid .pet.memorial,.res-grid .pet.memorial:hover{transform:none;box-shadow:0 18px 34px -26px rgba(29,43,45,.45)}
 .pet.memorial::before{display:none}
 .pet.memorial .photo img{filter:grayscale(1) contrast(.95) brightness(1.02)}
-.pet.memorial .in-memoriam{display:block;margin:16px 6px 0;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.pet.memorial h3{margin-top:4px;color:var(--ink)}
+.pet.memorial .in-memoriam{display:inline-block;vertical-align:middle;margin:-4px 0 0 8px;font-family:var(--body);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.pet.memorial h3{color:var(--ink)}
 
 /* Reviews */
 .reviews-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:44px}
@@ -215,7 +210,7 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .score{background:var(--petrol);color:var(--paper);border-radius:999px;padding:14px 30px 14px 16px;display:flex;align-items:center;gap:16px;transform:rotate(-2deg)}
 .score b{font-family:var(--display);font-weight:400;font-size:44px;line-height:1;color:var(--petrol);background:var(--saffron);width:84px;height:84px;border-radius:50%;display:grid;place-items:center}
 .score span{font-size:15px;color:#cfe1dd}
-.stars{color:var(--saffron);letter-spacing:3px;font-size:18px}
+.stars{display:flex;gap:4px;color:var(--saffron);font-size:15px;line-height:1}
 .review{background:var(--paper);border-radius:var(--r-lg);padding:30px 26px 26px;display:flex;flex-direction:column;gap:16px;position:relative}
 .review::before{content:"\201C";font-family:var(--display);font-size:82px;line-height:.6;color:var(--saffron);height:34px}
 .review p{margin:0;font-size:15.5px;line-height:1.62;color:var(--ink);flex:1}
@@ -236,19 +231,19 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .faq-list details:last-child{border-bottom:1px solid var(--line)}
 .faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 2px;cursor:pointer;font-family:var(--display);font-size:22px;line-height:1.25;color:var(--petrol);list-style:none}
 .faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary::after{content:"+";flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--body);font-size:22px;background:var(--paper);color:var(--petrol);transition:transform .35s var(--ease),background .2s}
-.faq-list details[open] summary::after{transform:rotate(45deg);background:var(--saffron)}
+.faq-list summary::after{content:"";flex:0 0 36px;height:36px;border-radius:50%;background-color:var(--paper);background-image:linear-gradient(var(--petrol),var(--petrol)),linear-gradient(var(--petrol),var(--petrol));background-size:14px 2px,2px 14px;background-position:center;background-repeat:no-repeat;transition:transform .35s var(--ease),background-color .2s}
+.faq-list details[open] summary::after{transform:rotate(45deg);background-color:var(--saffron)}
 .faq-list details p{margin:-6px 0 0;padding:0 56px 26px 2px;font-size:16.5px;line-height:1.65;color:var(--muted)}
 
 /* Contacts */
 .contact{background:var(--paper);border-radius:48px 48px 0 0}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
 .contact dl{margin:30px 0 0;display:grid;grid-template-columns:auto 1fr;gap:14px 24px;font-size:16.5px}
-.contact dt{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);padding-top:3px}
+.contact dt{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink);padding-top:3px}
 .contact dd{margin:0;color:var(--ink)}
 .contact dd a{text-decoration:none;font-weight:700}
 .hours{margin:32px 0;padding:22px 22px 16px;border-radius:22px;background:var(--plaster);font-size:14px}
-.hours h3{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 14px;display:flex;justify-content:space-between;gap:12px}
+.hours h3{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink);margin:0 0 14px;display:flex;justify-content:space-between;gap:12px}
 .hours h3 .status{letter-spacing:0;text-transform:none;font-size:14px;display:inline-flex;align-items:center;gap:7px}
 .day{display:grid;grid-template-columns:46px 1fr;align-items:center;gap:12px;padding:5px 0;color:var(--muted);font-weight:700;border-radius:8px}
 .day.today{color:var(--petrol)}
@@ -256,7 +251,7 @@ header.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
 .bar{position:relative;height:14px;border-radius:999px;background:rgba(23,67,79,.06)}
 .bar i{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--teal);left:calc((var(--s) - 9) / 11 * 100%);width:calc((var(--e) - var(--s)) / 11 * 100%)}
 .day.today .bar i{background:var(--petrol)}
-.scale{display:grid;grid-template-columns:46px 1fr;gap:12px;margin-top:6px;font-size:12px;color:var(--muted)}
+.scale{font-variant-numeric:tabular-nums;display:grid;grid-template-columns:46px 1fr;gap:12px;margin-top:6px;font-size:12px;color:var(--muted)}
 .scale div{display:flex;justify-content:space-between}
 .hours .fine{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
 .map{position:relative;border-radius:999px 999px 28px 28px;overflow:hidden;min-height:560px;border:10px solid var(--plaster);background:var(--plaster-2)}
@@ -269,6 +264,13 @@ footer.site img{width:30px;height:30px}
 footer.site .social{margin-left:auto;display:flex;align-items:center;gap:6px}
 footer.site a{color:var(--mist);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;font-size:20px;line-height:1;transition:color .2s,background .2s}
 footer.site a:hover{color:var(--petrol);background:var(--saffron)}
+
+@media(hover:hover) and (pointer:fine){
+.btn-sun:hover{transform:translateY(-2px)}
+.menu li:hover i{transform:rotate(-12deg) scale(1.08)}
+.member:hover .photo img{transform:scale(1.05)}
+.pet:hover{transform:rotate(0) translateY(-6px)}
+}
 
 /* ≤ 980 */
 @media(max-width:980px){
@@ -298,7 +300,10 @@ header.menu-open nav{display:flex}
 .grow{grid-template-columns:1fr;gap:28px;padding:30px 24px}
 .grow p{font-size:16.5px}
 .plan{max-width:300px}
-body{font-size:16px;padding-bottom:78px}
+body{font-size:16px}
+/* Room for the fixed call bar lives inside the footer, so the page ends in petrol, not a beige strip */
+footer.site .wrap{padding-bottom:calc(32px + 78px + env(safe-area-inset-bottom))}
+footer.site .social{margin-left:35px}
 .wrap{padding:0 18px}
 .pad{padding-top:60px;padding-bottom:60px}
 .nav{padding:10px 18px;gap:10px}
@@ -336,6 +341,8 @@ body{font-size:16px;padding-bottom:78px}
 .contact dt{margin-top:12px}
 .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(241,232,221,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
 .mobile-bar .btn{justify-content:center;padding:13px 10px;font-size:15.5px}
+.mobile-bar .btn-line{background:var(--paper)}
+.mobile-bar .btn-line:hover{background:var(--petrol);color:var(--paper)}
 /* The bar repeats the hero's buttons, so it waits until those have scrolled away.
    Only when JS can watch them (.cta-watch); without JS the bar simply stays visible.
    visibility flips after the slide-out so hidden buttons can't be tapped or focused. */
@@ -444,9 +451,8 @@ html{scroll-behavior:auto}
 
 <section class="hero" id="topo">
   <div>
-    <span class="kicker in d1">Clínica veterinária · Penafiel</span>
     <h1 class="in d2">Cuidamos do seu animal com <span class="mark">amor e tranquilidade</span>, <span class="soft">na clínica ou no conforto do seu lar.</span></h1>
-    <p class="sub in d3">Centro veterinário e veterinário ao domicílio. A mesma saúde, sem mexer uma pata!</p>
+    <p class="sub in d3">Centro veterinário em Penafiel e veterinário ao domicílio. A mesma saúde, sem mexer uma pata!</p>
     <div class="actions in d4">
       <a class="btn btn-sun" href="tel:+351916840339"><i class="bi bi-telephone-fill" aria-hidden="true"></i>Ligar agora</a>
       <a class="btn btn-line" href="https://wa.me/351916840339" target="_blank" rel="noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>
@@ -477,7 +483,6 @@ html{scroll-behavior:auto}
   <div class="wrap">
     <div class="grow">
       <div>
-        <span class="kicker">Novidade</span>
         <h2 id="novidades-titulo">Estamos a crescer: vamos mudar para instalações muito maiores</h2>
         <p>Praticamente no mesmo sítio, mas com <strong>muito mais espaço</strong> para receber mais animais e ajudar mais famílias. Em breve partilhamos todos os detalhes.</p>
       </div>
@@ -498,7 +503,6 @@ html{scroll-behavior:auto}
   <div class="wrap pad">
     <div class="svc-layout">
       <div class="svc-intro">
-        <span class="kicker">O que fazemos</span>
         <h2 class="h2">Serviços</h2>
         <p class="lede">Tudo o que o seu companheiro precisa, num só lugar.</p>
         <p class="note"><i class="bi bi-house-heart" aria-hidden="true"></i><span>Consultas, vacinação e desparasitação também podem ser feitas em sua casa.</span></p>
@@ -522,7 +526,6 @@ html{scroll-behavior:auto}
     <div class="dom-grid">
       <div class="arch"><img src="assets/img/domicilio.jpg" alt="Auxiliar veterinário da Zen Pet com dois cães durante uma visita ao domicílio" loading="lazy"></div>
       <div>
-        <span class="kicker">Ao domicílio</span>
         <h2 class="h2">Veterinário ao domicílio</h2>
         <p class="big">Sem transportadora, sem viagem, sem sala de espera.</p>
         <p>Para animais ansiosos, tutores sem transporte ou famílias com mais do que um animal, vamos até si. Consultas, vacinação e acompanhamento no conforto de casa — com a mesma qualidade da clínica.</p>
@@ -547,7 +550,6 @@ html{scroll-behavior:auto}
   <div class="wrap pad">
     <div class="team-head">
       <div>
-        <span class="kicker">Quem cuida</span>
         <h2 class="h2">A equipa</h2>
         <p class="lede">Caras conhecidas que tratam o seu animal pelo nome.</p>
       </div>
@@ -568,7 +570,6 @@ html{scroll-behavior:auto}
   <div class="wrap pad">
     <div class="res-grid">
       <div>
-        <span class="kicker">Residentes</span>
         <h2 class="h2">As mascotes</h2>
         <p class="lede">O Fú e a nova mascote, Rafinha, estão por perto para receber quem chega. O Yang fica para sempre na nossa memória.</p>
       </div>
@@ -581,14 +582,12 @@ html{scroll-behavior:auto}
         <!-- Quando houver foto: guardar em assets/img/pets/rafinha.jpg e trocar este bloco por
              <div class="photo"><img src="assets/img/pets/rafinha.jpg" alt="Rafinha, mascote da Zen Pet" loading="lazy"></div> -->
         <div class="photo soon" role="img" aria-label="Foto da Rafinha em breve"><span><img src="assets/img/logo.png" alt="">Foto em breve</span></div>
-        <span class="new-badge">Novidade</span>
-        <h3>Rafinha</h3>
+        <h3>Rafinha <span class="new-badge">Novidade</span></h3>
         <p>A mais recente mascote da clínica. As apresentações completas vêm em breve!</p>
       </div>
       <div class="pet memorial">
         <div class="photo"><img src="assets/img/pets/yang.jpg" alt="Yang, gato que viveu na Zen Pet, deitado numa cadeira" loading="lazy"></div>
-        <span class="in-memoriam">Em memória</span>
-        <h3>Yang</h3>
+        <h3>Yang <span class="in-memoriam">Em memória</span></h3>
         <p>Mestre da fuga e do roubo de comida. Adorava mimos na barriga e saltar para o colo.</p>
       </div>
     </div>
@@ -599,10 +598,9 @@ html{scroll-behavior:auto}
   <div class="wrap pad">
     <div class="reviews-head">
       <div>
-        <span class="kicker">Avaliações no Google</span>
         <h2 class="h2">O que dizem os clientes</h2>
       </div>
-      <div class="score"><b>5,0</b><div><div class="stars" aria-label="5 estrelas">★★★★★</div><span>Avaliação média no Google</span></div></div>
+      <div class="score"><b>5,0</b><div><div class="stars" role="img" aria-label="5 estrelas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><span>Avaliação média no Google</span></div></div>
     </div>
     <div class="reviews-grid">
       <figure class="review" style="margin:0">
@@ -637,7 +635,6 @@ html{scroll-behavior:auto}
   <div class="wrap" style="padding-bottom:104px">
     <div class="faq-grid">
       <div>
-        <span class="kicker">Dúvidas</span>
         <h2 class="h2">Perguntas frequentes</h2>
         <p class="lede">Não encontra a resposta? Ligue-nos para o <a href="tel:+351916840339" style="font-weight:700;white-space:nowrap">916 840 339</a>.</p>
       </div>
@@ -656,7 +653,6 @@ html{scroll-behavior:auto}
   <div class="wrap pad">
     <div class="contact-grid">
       <div>
-        <span class="kicker">Visite-nos</span>
         <h2 class="h2">Contactos &amp; horário</h2>
         <dl>
           <dt>Morada</dt><dd>Rua de Covas 411H, 4560-656 Penafiel</dd>
@@ -703,7 +699,7 @@ html{scroll-behavior:auto}
 
 <div class="mobile-bar">
   <a class="btn btn-sun" href="tel:+351916840339"><i class="bi bi-telephone-fill" aria-hidden="true"></i>Ligar agora</a>
-  <a class="btn btn-line" href="https://wa.me/351916840339" target="_blank" rel="noreferrer" style="background:var(--paper)"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+  <a class="btn btn-line" href="https://wa.me/351916840339" target="_blank" rel="noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp</a>
 </div>
 
 <script>
